@@ -10,6 +10,7 @@
 #include "AddSingleOpAssign.h"
 #include "AddCondition.h"
 #include "string"
+#include "Addconector.h"
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -95,6 +96,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			pAct = new AddCondition(this);
 			break;
 		case ADD_CONNECTOR:
+
+			pAct = new Addconector(this);
+			break;
 
 		case SELECT:
 			///create Select Action here

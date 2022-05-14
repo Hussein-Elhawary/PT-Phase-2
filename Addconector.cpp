@@ -42,7 +42,8 @@ void Addconector::Execute()
 	Statement *Source;
 	Statement *Destination;
 
-	pManager->GetStatement(start);
+	Source = pManager->GetStatement(start);
+	Destination = pManager->GetStatement(end);
 
 	Input* pIn = pManager->GetInput();
 	Output* pOut = pManager->GetOutput();
