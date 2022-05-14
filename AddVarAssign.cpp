@@ -29,7 +29,7 @@ void AddVarAssign::ReadActionParameters()
 	pOut->ClearStatusBar();
 
 	pOut->PrintMessage("Enter right hand side:");
-	rhs = pIn->GetValue(pOut);
+	rhs = pIn->GetString(pOut);
 	pOut->ClearStatusBar();
 }
 
@@ -43,7 +43,7 @@ void AddVarAssign::Execute()
 	Corner.x = Position.x - UI.ASSGN_WDTH / 2;
 	Corner.y = Position.y;
 
-	VarAssign* pAssign = new VarAssign(Corner, "", "");
+	VarAssign* pAssign = new VarAssign(Corner, lhs, rhs);
 
 	pManager->AddStatement(pAssign);
 }

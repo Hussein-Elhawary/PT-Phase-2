@@ -27,6 +27,8 @@ public:
 	
 	//Execute action (code depends on action type)
 	virtual void Execute() =0;
+	//checks if the operator is a valid operator( == , > ,< , >= , <= ,!=)
+	//virtual bool checkOperator(string Op);
 };
 
 #endif

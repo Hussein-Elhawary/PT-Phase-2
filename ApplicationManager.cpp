@@ -1,11 +1,14 @@
 #include "ApplicationManager.h"
 #include "Actions\AddSmplAssign.h"
+#include "AddVarAssign.h"
 #include "AddStart.h"
 #include "AddEnd.h"
 #include "AddRead.h"
 #include "AddWrite.h"
 #include "GUI\Input.h"
 #include "GUI\Output.h"
+#include "AddSingleOpAssign.h"
+#include "AddCondition.h"
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -39,13 +42,36 @@ ActionType ApplicationManager::GetUserAction() const
 void ApplicationManager::ExecuteAction(ActionType ActType) 
 {
 	Action* pAct = NULL;
-	
+	string assingntype = "0";
 	//According to ActioType, create the corresponding action object
 	switch (ActType)
 	{
 		case ADD_SMPL_ASSIGN:
-			pAct = new AddSmplAssign(this);
-			break;
+			pOut->PrintMessage("Please enter a value to decide which type of assignment.(1 for simple, 2 for variable ,3 single operator)");
+			assingntype = pIn->GetString(pOut);
+			while (assingntype !=  "1" && assingntype != "2" && assingntype != "3")
+			{
+				pOut->PrintMessage("re-enter from the valid selection value to decide which type of assignment.(1 for simple, 2 for variable ,3 single operator)");
+				assingntype = pIn->GetString(pOut);
+
+			}
+
+			if (assingntype == "1")
+			{
+				pAct = new AddSmplAssign(this);
+				break;
+			}
+			else if (assingntype == "2")
+			{
+				pAct = new AddVarAssign(this);
+				break;
+
+			}
+			else if (assingntype == "3")
+			{
+				pAct = new AddSingleOpAssign(this);
+				break;
+			}
 
 		case START:
 			pAct = new AddStart(this);
@@ -65,7 +91,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case ADD_CONDITION:
 			///create AddCondition Action here
-
+			pAct = new AddCondition(this);
 			break;
 
 		case SELECT:

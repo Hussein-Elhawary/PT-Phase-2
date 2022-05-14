@@ -184,6 +184,8 @@
     <ClCompile Include="Write.cpp">
       <Filter>Statements</Filter>
     </ClCompile>
+    <ClCompile Include="AddSingleOpAssign.cpp" />
+    <ClCompile Include="AddCondition.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -310,6 +312,8 @@
     <ClInclude Include="Write.h">
       <Filter>Statements</Filter>
     </ClInclude>
+    <ClInclude Include="AddSingleOpAssign.h" />
+    <ClInclude Include="AddCondition.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

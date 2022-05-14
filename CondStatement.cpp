@@ -41,7 +41,7 @@ void CondStatement::setRHS(const string& R)
 
 void CondStatement::setOP(const string& m)
 {
-	if (m == "==" || m == "<" || m == "<=" || m == ">" || m == ">=")
+	if (m == "==" || m == "<" || m == "<=" || m == ">" || m == ">=" || "!=")
 	{
 		OP = m;
 		UpdateStatementText();
