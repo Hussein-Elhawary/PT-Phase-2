@@ -186,6 +186,7 @@
     </ClCompile>
     <ClCompile Include="AddSingleOpAssign.cpp" />
     <ClCompile Include="AddCondition.cpp" />
+    <ClCompile Include="Addconector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -314,6 +315,7 @@
     </ClInclude>
     <ClInclude Include="AddSingleOpAssign.h" />
     <ClInclude Include="AddCondition.h" />
+    <ClInclude Include="Addconector.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

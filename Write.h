@@ -13,6 +13,7 @@ private:
 	Point LeftCorner;	//left corenr of the statement block.
 
 	virtual void UpdateStatementText();
+	virtual Point getstatmentposition();
 
 public:
 	Write(Point Lcorner, string obj = "");

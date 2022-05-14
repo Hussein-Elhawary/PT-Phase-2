@@ -8,8 +8,8 @@ CondStatement::CondStatement(Point Lcorner, string LeftHS, string op,string Righ
 	LHS = LeftHS;
 	RHS = RightHS;
 	OP = op;
-
-
+	type = "rhombus";
+	
 	UpdateStatementText();
 
 	LeftCorner = Lcorner;
@@ -68,4 +68,11 @@ void CondStatement::UpdateStatementText()
 		T << LHS << OP << RHS;
 		Text = T.str();
 	}
+}
+
+Point CondStatement::getstatmentposition()
+{
+	LeftCorner.y - UI.ASSGN_HI / 2;
+	return LeftCorner;
+
 }

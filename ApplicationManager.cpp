@@ -9,6 +9,7 @@
 #include "GUI\Output.h"
 #include "AddSingleOpAssign.h"
 #include "AddCondition.h"
+#include "string"
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -93,6 +94,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 			///create AddCondition Action here
 			pAct = new AddCondition(this);
 			break;
+		case ADD_CONNECTOR:
 
 		case SELECT:
 			///create Select Action here
@@ -137,8 +139,30 @@ Statement *ApplicationManager::GetStatement(Point P) const
 
 
 	///Add your code here to search for a statement given a point P(x,y)	
+	for (int i = 0; i < StatCount; i++)
+	{
+		Point leftcorner = StatList[i]->getstatmentposition();
 
+		Point RightCorner;
+		RightCorner.x = leftcorner.x + UI.ASSGN_WDTH; // calculated all the corners just in case
+		RightCorner.y = leftcorner.y ;
 
+		Point BottomLeftCorner;
+		BottomLeftCorner.x = leftcorner.x;
+		BottomLeftCorner.y = leftcorner.y + UI.ASSGN_HI;
+
+		Point BottomRightCorner;
+		BottomRightCorner.x = leftcorner.x + UI.ASSGN_WDTH;
+		BottomRightCorner.y = leftcorner.y + UI.ASSGN_HI;
+
+		string type = StatList[i]->gettype();
+
+		if (P.x >= leftcorner.x && P.x <= RightCorner.x && P.y >= BottomLeftCorner.y && P.y <= RightCorner.y)
+		{
+			
+		return StatList[i];
+		}
+	}
 	return NULL;
 }
 ////////////////////////////////////////////////////////////////////////////////////

@@ -54,4 +54,3 @@ void AddSmplAssign::Execute()
 
 	pManager->AddStatement(pAssign);
 }
-

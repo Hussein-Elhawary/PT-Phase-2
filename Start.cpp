@@ -5,7 +5,7 @@ using namespace std;
 
 Start::Start(Point Lcorner)
 {
-
+	type = "ellipse";
 	LeftCorner = Lcorner;
 
 	pConn = NULL;	//No connectors yet
@@ -29,3 +29,9 @@ void Start::UpdateStatementText()
 }
 
 
+Point Start::getstatmentposition()
+{
+	LeftCorner.y - UI.ASSGN_HI / 2;
+	return LeftCorner;
+
+}

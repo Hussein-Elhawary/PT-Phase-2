@@ -18,5 +18,6 @@ private:
 public:
 	End(Point Lcorner);
 	virtual void Draw(Output* pOut) const;
+	virtual Point getstatmentposition();
 };
 

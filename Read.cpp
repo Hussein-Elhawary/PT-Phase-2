@@ -6,7 +6,7 @@ using namespace std;
 Read::Read(Point Lcorner, string var)
 {
 	VAR = var;
-
+	type = "parallelogram";
 	UpdateStatementText();
 
 	LeftCorner = Lcorner;
@@ -47,4 +47,10 @@ void Read::UpdateStatementText()
 		T << VAR;
 		Text = T.str();
 	}
+}
+
+Point Read::getstatmentposition()
+{
+	return LeftCorner;
+
 }

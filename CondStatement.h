@@ -25,6 +25,7 @@ public:
 	void setRHS(const string& R);
 	void setOP(const string& R);
 
+	virtual Point getstatmentposition();
 	virtual void Draw(Output* pOut) const;
 };
 

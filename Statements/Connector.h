@@ -3,9 +3,10 @@
 
 #include "..\GUI\UI_Info.h"
 #include "..\GUI\output.h"
+#include "Statement.h"
 class Statement;
 
-class Connector	//a connector that connects two statements (Source & Destination)
+class Connector  	//a connector that connects two statements (Source & Destination)
 {
 private:
 	Statement *SrcStat;	//The source statement of the connector
@@ -27,8 +28,8 @@ public:
 	Point getEndPoint();
 
 	void Draw(Output* pOut) const;
-	
-
+	virtual void UpdateStatementText();
+	virtual Point getstatmentposition();
 };
 
 #endif

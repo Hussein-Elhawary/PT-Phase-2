@@ -13,7 +13,9 @@ protected:
 	int ID;			//Each Statement has an ID
 	string Text;	//Statement text (e.g.  "X = 5" OR "if(salary > 3000)" and so on )
 	bool Selected;	//true if the statement is selected on the folwchart
-
+	string type;
+	int width;
+	int height;
 
 	virtual void UpdateStatementText() = 0;	//is called when any part of the stat. is edited	
 
@@ -26,7 +28,10 @@ public:
 
 	virtual void Draw(Output* pOut) const  = 0 ;	//Draw the statement
 	bool CheckStatement(Point p);
-	
+	virtual Point getstatmentposition() ;
+	virtual string gettype();
+	virtual int getheight();
+	virtual int getwidth();
 
 	///TODO:The following functions should be supported by the Statement class
 	///		It should then be overridden by each derived Statement

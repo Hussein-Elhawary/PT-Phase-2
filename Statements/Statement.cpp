@@ -12,3 +12,23 @@ void Statement::SetSelected(bool s)
 bool Statement::IsSelected() const
 {	return Selected; }
 
+string Statement::gettype()
+{
+	return type;
+}
+int Statement::getheight()
+{
+	return height;
+}
+
+int Statement::getwidth()
+{
+	return width;
+}
+
+Point Statement::getstatmentposition()
+{
+	//not working yet
+	Point x(0, 1);
+	return x;
+}

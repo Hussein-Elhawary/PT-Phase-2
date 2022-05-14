@@ -18,7 +18,8 @@ public:
 	Read(Point Lcorner, string var = "");
 	void setVAR(const string& var);
 
-	virtual void Draw(Output* pOut) const;
+	virtual void Draw(Output* pOut) const; 
+	virtual Point getstatmentposition();
 	
 };
 

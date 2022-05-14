@@ -22,7 +22,7 @@ public:
 	void setRHS(const string& R);
 
 	virtual void Draw(Output* pOut) const;
-
+	Point getstatmentposition();
 	
 };
 

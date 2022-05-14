@@ -7,7 +7,7 @@ SmplAssign::SmplAssign(Point Lcorner, string LeftHS, double RightHS)
 {
 	LHS = LeftHS;
 	RHS = RightHS;
-
+	type = "rectangle";
 	UpdateStatementText();
 
 	LeftCorner = Lcorner;
@@ -54,4 +54,10 @@ void SmplAssign::UpdateStatementText()
 		T<<LHS<<" = "<<RHS;	
 		Text = T.str();	 
 	}
+}
+
+Point SmplAssign::getstatmentposition()
+{
+	return LeftCorner;
+
 }

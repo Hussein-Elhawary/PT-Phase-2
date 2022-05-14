@@ -4,7 +4,6 @@ Connector::Connector(Statement* Src, Statement* Dst)
 //When a connector is created, it must have a source statement and a destination statement
 //There are no free connectors in the folwchart
 {
-	
 	SrcStat = Src;
 	DstStat = Dst;
 }
@@ -40,3 +39,14 @@ void Connector::Draw(Output* pOut) const
 	pOut->DrawConnector(Start, End,false);
 }
 
+void Connector::UpdateStatementText()
+{
+	//hussein says this still not done
+
+}
+
+Point Connector::getstatmentposition()
+{
+	return Start;
+
+}

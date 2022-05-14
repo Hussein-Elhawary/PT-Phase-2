@@ -5,6 +5,7 @@ using namespace std;
 
 VarAssign::VarAssign(Point Lcorner, string LeftHS, string RightHS)
 {
+	type = "rectangle";
 	LHS = LeftHS;
 	RHS = RightHS;
 
@@ -54,4 +55,9 @@ void VarAssign::UpdateStatementText()
 		T << LHS << " = " << RHS;
 		Text = T.str();
 	}
+}
+
+Point VarAssign::getstatmentposition()
+{
+	return LeftCorner;
 }

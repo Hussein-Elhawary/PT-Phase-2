@@ -5,6 +5,7 @@ using namespace std;
 
 SingleOperator::SingleOperator(Point Lcorner, string LeftHS , string RightHS1 , string op , string RightHS2 )
 {
+	type = "rectangle";
 	LHS = LeftHS;
 	RHS1 = RightHS1;
 	OP = op;
@@ -71,4 +72,10 @@ void SingleOperator::UpdateStatementText()
 		T << LHS << " = " << RHS1 << OP << RHS2;
 		Text = T.str();
 	}
+}
+
+Point SingleOperator::getstatmentposition()
+{
+	return LeftCorner;
+
 }

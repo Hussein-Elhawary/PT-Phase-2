@@ -5,7 +5,7 @@ using namespace std;
 
 End::End(Point Lcorner)
 {
-
+	type = "ellipse";
 	LeftCorner = Lcorner;
 
 	pConn = NULL;	//No connectors yet
@@ -26,4 +26,11 @@ void End::Draw(Output* pOut) const
 
 void End::UpdateStatementText()
 {
+}
+
+Point End::getstatmentposition()
+{
+	LeftCorner.y - UI.ASSGN_HI / 2;
+	return LeftCorner ;
+
 }

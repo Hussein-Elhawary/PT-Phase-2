@@ -5,6 +5,7 @@ using namespace std;
 
 Write::Write(Point Lcorner, string obj)
 {
+	type = "parallelogram";
 	OBJ = obj;
 
 	UpdateStatementText();
@@ -48,4 +49,11 @@ void Write::UpdateStatementText()
 		T << OBJ;
 		Text = T.str();
 	}
+}
+
+Point Write::getstatmentposition()
+{
+
+	return LeftCorner;
+
 }
