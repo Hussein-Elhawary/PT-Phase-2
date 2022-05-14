@@ -1,7 +1,7 @@
 #include "ApplicationManager.h"
 //hussein
 //zaki
-//elzahar
+//zahar
 int main()
 {
 	ActionType ActType;
