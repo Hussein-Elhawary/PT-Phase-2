@@ -39,17 +39,19 @@ public:
 	Statement *GetStatement(Point P) const;	//search for a statement where point P belongs
 
 	void AddConnector(Connector* pConn); //Adds a new Connector to the Flowchart
-	Connector *GetConnector(Point P) const;	//search for a Connector where point P belongs
+    Connector *GetConnector(Point P) const;	//search for a Connector where point P belongs
 
 
 	Statement *GetSelectedStatement() const;	//Returns the selected Statement
 	void SetSelectedStatement(Statement *pStat); //Set the Statement selected by the user
+	int GetStatCount()const;                    //Returns number of exisiting statments
 
 		
 	// -- Interface Management Functions
 	Input *GetInput() const; //Return pointer to the input
 	Output *GetOutput() const; //Return pointer to the output
 	void UpdateInterface() const;	//Redraws all the drawing window
+	//void SaveChart(ofstream& OutFile); //saves the flowchart
 	
 };
 

@@ -282,6 +282,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="Read.cpp" />
+    <ClCompile Include="Select.cpp" />
     <ClCompile Include="SingleOperator.cpp" />
     <ClCompile Include="Start.cpp" />
     <ClCompile Include="Statements\Connector.cpp" />
@@ -332,6 +333,7 @@
     <ClInclude Include="GUI\UI_Info.h" />
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="Read.h" />
+    <ClInclude Include="Select.h" />
     <ClInclude Include="SingleOperator.h" />
     <ClInclude Include="Start.h" />
     <ClInclude Include="Statements\Connector.h" />

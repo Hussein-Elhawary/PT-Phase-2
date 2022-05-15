@@ -184,9 +184,16 @@
     <ClCompile Include="Write.cpp">
       <Filter>Statements</Filter>
     </ClCompile>
-    <ClCompile Include="AddSingleOpAssign.cpp" />
-    <ClCompile Include="AddCondition.cpp" />
-    <ClCompile Include="Addconector.cpp" />
+    <ClCompile Include="AddSingleOpAssign.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="AddCondition.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Addconector.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Select.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -313,9 +320,16 @@
     <ClInclude Include="Write.h">
       <Filter>Statements</Filter>
     </ClInclude>
-    <ClInclude Include="AddSingleOpAssign.h" />
-    <ClInclude Include="AddCondition.h" />
-    <ClInclude Include="Addconector.h" />
+    <ClInclude Include="AddSingleOpAssign.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AddCondition.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Addconector.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Select.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

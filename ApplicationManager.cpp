@@ -8,6 +8,7 @@
 #include "GUI\Input.h"
 #include "GUI\Output.h"
 #include "AddSingleOpAssign.h"
+#include "Select.h"
 #include "AddCondition.h"
 #include "string"
 #include "Addconector.h"
@@ -102,7 +103,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 		case SELECT:
 			///create Select Action here
-
+			pAct = new Select(this);
 			break;
 
 		case EXIT:
@@ -169,6 +170,10 @@ Statement *ApplicationManager::GetStatement(Point P) const
 	}
 	return NULL;
 }
+Connector* ApplicationManager::GetConnector(Point P) const
+{
+	return nullptr;
+}
 ////////////////////////////////////////////////////////////////////////////////////
 //Returns the selected statement
 Statement *ApplicationManager::GetSelectedStatement() const
@@ -205,6 +210,26 @@ Output *ApplicationManager::GetOutput() const
 {	return pOut; }
 ////////////////////////////////////////////////////////////////////////////////////
 
+int ApplicationManager::GetStatCount()const
+{
+	return StatCount;
+}
+//
+//void ApplicationManager::SaveChart(ofstream& OutFile)
+//{
+//	OutFile << StatCount << endl;
+//	for (int i = 0; i < StatCount; i++)
+//	{
+//		if (StatList[i] != NULL)
+//			StatList[i]->Save(OutFile);
+//	}
+//	OutFile << ConnCount << endl;
+//	for (int i = 0; i < ConnCount; i++)
+//	{
+//		if (ConnList[i] != NULL)
+//			ConnList[i]->Save(OutFile);
+//	}
+//}
 
 //Destructor
 ApplicationManager::~ApplicationManager()

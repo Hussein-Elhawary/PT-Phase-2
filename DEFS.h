@@ -52,7 +52,7 @@ enum DsgnMenuItem //The items of the design menu (you should add more items)
 	//Note: Items are ordered here as they appear in menu
 	//If you change the menu items order, change the order here too
 	//TODO: Add more items names here
-	ITM_EXIT_DSN,		  //Exit for Design
+	ITM_EXIT_DSN,	   //Exit for Design
 	ITM_START,        //Start
 	ITM_READ,         //Read
 	ITM_WRITE,        //Write

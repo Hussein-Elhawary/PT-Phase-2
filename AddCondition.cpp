@@ -55,17 +55,14 @@ void AddCondition::Execute()
 	ReadActionParameters();
 
 
-	//Calculating left corner of assignement statement block
-	Point Corner;
-	Corner.x = Position.x - UI.ASSGN_WDTH / 2;
-	Corner.y = Position.y;
+
 
 	Input* pIn = pManager->GetInput();
 	Output* pOut = pManager->GetOutput();
 
 
-	pOut->ClickCheck(Corner, UI.ASSGN_WDTH, UI.ASSGN_HI);
-	CondStatement *pAssign = new CondStatement(Corner, lhs, Op, rhs);
+	pOut->ClickCheck(Position, UI.ASSGN_WDTH, UI.ASSGN_HI);
+	CondStatement *pAssign = new CondStatement(Position, lhs, Op, rhs);
 
 	pManager->AddStatement(pAssign);
 }
