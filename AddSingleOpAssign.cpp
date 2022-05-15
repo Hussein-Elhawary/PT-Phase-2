@@ -65,7 +65,8 @@ void AddSingleOpAssign::Execute()
 	Input* pIn = pManager->GetInput();
 	Output* pOut = pManager->GetOutput();
 
-
+	
+	pOut->ClickCheck(Corner, UI.ASSGN_WDTH, UI.ASSGN_HI);
 	SingleOperator* pAssign = new SingleOperator(Corner, lhs, rhs1, Op, rhs2);
 
 	pManager->AddStatement(pAssign);

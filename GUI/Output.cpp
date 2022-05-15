@@ -179,22 +179,24 @@ void Output::PrintMessage(string msg)	//Prints a message on status bar
 //Draw assignment statement and write the "Text" on it
 void Output::ClickCheck(Point& Left, int width, int height)
 {
-	while (Left.y<UI.TlBrWdth || Left.y + height > UI.height - UI.StBrWdth || Left.x + width > UI.width - 20 || Left.x - width / 2 < 0 + 1)	//checks if the user clicks on the toolbar or the status bar
+	while ((Left.y<UI.TlBrWdth) || (Left.y + height > UI.height - UI.StBrWdth) || (Left.x + width > UI.width - 20) || (Left.x - width / 2 < 0 + 1))	//checks if the user clicks on the toolbar or the status bar
 	{
 		ClearStatusBar();	//First clear the status bar
 		pWind->DrawString(10, UI.height - (int)(UI.StBrWdth / 1.5), "Please press in a valid area (not on status bar nor on the toolbar and inside the screen)");
 		pWind->WaitMouseClick(Left.x, Left.y);
+		ClearStatusBar();
 		if (Left.x > 0 && Left.x < UI.MnItWdth && Left.y > 0 && Left.y < UI.TlBrWdth)
 		{
 			int Zahar = 1;
 			exit(Zahar);		//this temrinates code if exit is pressed
 		}
+
 	}
 
 }
 void Output::DrawAssign(Point Left, int width, int height, string Text, bool Selected)
 {
-	ClickCheck(Left, width, height);
+	
 
 	if (Selected)	//if stat is selected, it should be highlighted
 		pWind->SetPen(UI.HiClr, 3);	//use highlighting color
@@ -213,7 +215,7 @@ void Output::DrawAssign(Point Left, int width, int height, string Text, bool Sel
 
 void Output::DrawCondtionalStat(Point Left, int width, int height, string Text, bool Selected)
 {
-	ClickCheck(Left, width, height);
+	
 
 	if (Selected)	//if stat is selected, it should be highlighted
 		pWind->SetPen(UI.HiClr, 3);	//use highlighting color
@@ -246,7 +248,7 @@ void Output::DrawCondtionalStat(Point Left, int width, int height, string Text, 
 
 void Output::DrawStart(Point Left, int width, int height, bool Selected)
 {
-	ClickCheck(Left, width, height);
+	
 
 	if (Selected)	//if stat is selected, it should be highlighted
 		pWind->SetPen(UI.HiClr, 3);	//use highlighting color
@@ -263,7 +265,7 @@ void Output::DrawStart(Point Left, int width, int height, bool Selected)
 
 void Output::DrawEnd(Point Left, int width, int height, bool Selected)
 {
-	ClickCheck(Left, width, height);
+	
 
 	if (Selected)	//if stat is selected, it should be highlighted
 		pWind->SetPen(UI.HiClr, 3);	//use highlighting color
@@ -340,7 +342,7 @@ void Output::DrawConnector(Point Start, Point End, bool Selected)
 
 void Output::DrawRead(Point Left, int width, int height, string Text, bool Selected)
 {
-	ClickCheck(Left, width, height);
+
 
 	if (Selected)	//if stat is selected, it should be highlighted
 		pWind->SetPen(UI.HiClr, 3);	//use highlighting color
@@ -377,7 +379,7 @@ void Output::DrawRead(Point Left, int width, int height, string Text, bool Selec
 }
 void Output::DrawWrite(Point Left, int width, int height, string Text, bool Selected)
 {
-	ClickCheck(Left, width, height);
+
 
 	if (Selected)	//if stat is selected, it should be highlighted
 		pWind->SetPen(UI.HiClr, 3);	//use highlighting color

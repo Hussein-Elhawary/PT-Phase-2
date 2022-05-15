@@ -43,6 +43,9 @@ void AddVarAssign::Execute()
 	Corner.x = Position.x - UI.ASSGN_WDTH / 2;
 	Corner.y = Position.y;
 
+	Output* pOut = pManager->GetOutput();
+	pOut->ClickCheck(Corner, UI.ASSGN_WDTH, UI.ASSGN_HI);
+
 	VarAssign* pAssign = new VarAssign(Corner, lhs, rhs);
 
 	pManager->AddStatement(pAssign);

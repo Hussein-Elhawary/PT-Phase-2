@@ -64,6 +64,7 @@ void AddCondition::Execute()
 	Output* pOut = pManager->GetOutput();
 
 
+	pOut->ClickCheck(Corner, UI.ASSGN_WDTH, UI.ASSGN_HI);
 	CondStatement *pAssign = new CondStatement(Corner, lhs, Op, rhs);
 
 	pManager->AddStatement(pAssign);

@@ -32,6 +32,8 @@ void AddEnd::Execute()
 	Point Corner;
 	Corner.x = Position.x - UI.ASSGN_WDTH / 2;
 	Corner.y = Position.y;
+	Output* pOut = pManager->GetOutput();
+	pOut->ClickCheck(Corner, UI.ASSGN_WDTH, UI.ASSGN_HI);
 
 	End* pEnd = new End(Corner);
 

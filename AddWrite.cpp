@@ -43,8 +43,7 @@ void AddWrite::Execute()
 	Input* pIn = pManager->GetInput();
 	Output* pOut = pManager->GetOutput();
 
-	//string t = pIn->GetString(pOut);
-	//const char* strstr(const char* str1, const char* str2);
+	pOut->ClickCheck(Corner, UI.ASSGN_WDTH, UI.ASSGN_HI);
 	Write* pWrite = new Write(Corner, var);
 	pOut->ClearStatusBar();
 

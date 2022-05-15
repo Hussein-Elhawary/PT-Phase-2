@@ -45,11 +45,14 @@ void AddSmplAssign::Execute()
 	Point Corner;
 	Corner.x = Position.x - UI.ASSGN_WDTH/2;
 	Corner.y = Position.y ;
+	
 
 	Input* pIn = pManager->GetInput();
 	Output* pOut = pManager->GetOutput();
+	
 
-
+	
+	pOut->ClickCheck(Corner, UI.ASSGN_WDTH, UI.ASSGN_HI);
 	SmplAssign *pAssign = new SmplAssign(Corner, lhs, rhs);
 
 	pManager->AddStatement(pAssign);
