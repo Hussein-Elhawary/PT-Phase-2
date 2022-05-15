@@ -35,6 +35,12 @@ void AddCondition::ReadActionParameters()
 	bool check = true;
 	pOut->PrintMessage("Enter an Operator: ( > , < , == , != , >= , <=)");
 	Op = pIn->GetString(pOut);
+	while (!(checkOperator(Op)))
+	{
+		pOut->PrintMessage("Error!please enter a valid operator( > , < , == , != , >= , <=):");
+		Op = pIn->GetString(pOut);
+
+	}
 	pOut->ClearStatusBar();
 
 	pOut->PrintMessage("Enter right hand side:");

@@ -35,9 +35,16 @@ void AddSingleOpAssign::ReadActionParameters()
 	rhs1 = pIn->GetString(pOut);
 	pOut->ClearStatusBar();
 
-	pOut->PrintMessage("Enter operation:");
+	pOut->PrintMessage("Enter an arithmatic operator:");
 	Op = pIn->GetString(pOut);
+	while (Op != "+" && Op != "-" && Op != "*" && Op != "/" )
+	{
+		pOut->PrintMessage("Error!please an arithmatic operator(+,-,*,/):");
+		Op = pIn->GetString(pOut);
+
+	}
 	pOut->ClearStatusBar();
+
 
 	pOut->PrintMessage("Enter second parameter:");
 	rhs2 = pIn->GetString(pOut);
