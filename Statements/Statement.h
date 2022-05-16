@@ -1,6 +1,6 @@
 #ifndef STATEMENT_H
 #define STATEMENT_H
-
+#include "fstream"
 #include "..\defs.h"
 #include "Connector.h"
 //class Output;
@@ -22,7 +22,7 @@ protected:
 	virtual void UpdateStatementText() = 0;	//is called when any part of the stat. is edited	
 
 	/// Add more parameters if needed.
-
+static int count;
 public:
 	Statement();
 	void SetSelected(bool s);
@@ -40,12 +40,14 @@ public:
 	virtual Point getOutletyes();
 	virtual Point getOutletno();
 	virtual void unselectstat();
+	static int Getcount();
+	int GetID();
 	///TODO:The following functions should be supported by the Statement class
 	///		It should then be overridden by each derived Statement
 	///		Decide the parameters that you should pass to each function and its return type	
 
 
-	//virtual void Save(ofstream &OutFile) = 0;	//Save the Statement parameters to a file
+	virtual void Save(ofstream &OutFile) = 0;	//Save the Statement parameters to a file
 	//virtual void Load(ifstream &Infile) = 0;	//Load the Statement parameters from a file
 
 

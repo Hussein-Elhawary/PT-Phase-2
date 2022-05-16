@@ -75,3 +75,9 @@ Connector* Read::Getconnect()
 {
 	return pConn;
 }
+
+void Read::Save(ofstream& OutFile)
+{
+	OutFile << "READ" << "           " << ID << "  " << LeftCorner.x << "  " << LeftCorner.y << "  " << VAR << endl;
+
+}

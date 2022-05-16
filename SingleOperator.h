@@ -30,5 +30,7 @@ public:
 	//virtual void PrintInfo(Output* pOut);
 	virtual Point getstatmentposition();
 	virtual Connector* Getconnect();
+	virtual void Save(ofstream& OutFile);	//Save the Statement parameters to a file
+
 };
 

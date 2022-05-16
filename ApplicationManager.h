@@ -57,7 +57,7 @@ public:
 	void UpdateInterface() const;	//Redraws all the drawing window
 	//void SaveChart(ofstream& OutFile); //saves the flowchart
 	bool FindIfValid();
-	void SaveChart(ofstream& OutFile);
+	void SaveAll(ofstream& OutFile);
 
 };
 

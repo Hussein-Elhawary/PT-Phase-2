@@ -26,6 +26,8 @@ public:
 	Point getInlet();
 	Point getOutlet();
 	virtual Connector* Getconnect();
+	virtual void Save(ofstream& OutFile);	//Save the Statement parameters to a file
+
 	
 };
 

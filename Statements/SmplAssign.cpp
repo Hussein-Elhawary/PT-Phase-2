@@ -81,3 +81,8 @@ Connector* SmplAssign::Getconnect()
 {
 	return pConn;
 }
+
+void SmplAssign::Save(ofstream& OutFile)
+{
+	OutFile << "SMPLASSIGN" << "       " << ID << "  " << LeftCorner.x << "  " << LeftCorner.y << "  " << LHS << "  " << RHS << "  " << endl;
+}

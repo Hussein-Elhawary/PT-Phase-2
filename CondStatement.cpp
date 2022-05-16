@@ -115,3 +115,9 @@ Point CondStatement::getOutletno()
 	return No_Outlet;
 
 }
+
+void CondStatement::Save(ofstream& OutFile)
+{
+	OutFile << "COND" << "  " << ID << "  " << LeftCorner.x << "  " << LeftCorner.y << "  " << LHS << "  " << OP << "  " << RHS << endl;
+
+}

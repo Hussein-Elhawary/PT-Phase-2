@@ -33,5 +33,7 @@ public:
 	Connector* GetNo_Conn(); 
 	Point getOutletyes();
 	Point getOutletno();
+	virtual void Save(ofstream& OutFile);	//Save the Statement parameters to a file
+
 };
 

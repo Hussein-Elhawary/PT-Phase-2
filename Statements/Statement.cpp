@@ -3,7 +3,8 @@
 Statement::Statement()	
 { 
 	Text = "";
-	Selected = false;	
+	Selected = false;
+	ID = count++;
 	
 }
 
@@ -65,3 +66,15 @@ void Statement::unselectstat()
 	Selected = false;
 
 }
+
+int Statement::GetID()
+{
+	return ID;
+}
+
+int Statement::Getcount()
+{
+	return count;
+}
+
+int Statement::count = 0;

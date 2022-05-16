@@ -82,3 +82,9 @@ Connector* VarAssign::Getconnect()
 {
 	return pConn;
 }
+
+void VarAssign::Save(ofstream& OutFile)
+{
+	OutFile << "VARASSIGN" << "       " << ID << "  " << LeftCorner.x << "  " << LeftCorner.y << "  " << LHS << "  " << RHS << "  " << endl;
+
+}

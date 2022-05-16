@@ -87,6 +87,11 @@ Connector* SingleOperator::Getconnect()
 	return pConn;
 }
 
+void SingleOperator::Save(ofstream& OutFile)
+{
+	OutFile << "SNGLOP" << "  " << ID << "  " << LeftCorner.x << "  " << LeftCorner.y << "  " << LHS << "  " << RHS1 << "  " << OP << "  " << RHS2 << "  " << endl;
+}
+
 Point SingleOperator::getInlet()
 {
 	Point Inletr = Inlet;

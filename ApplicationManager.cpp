@@ -9,6 +9,7 @@
 #include "GUI\Output.h"
 #include "AddSingleOpAssign.h"
 #include "Select.h"
+#include "Save.h"
 #include "AddCondition.h"
 #include "string"
 #include "Addconector.h"
@@ -114,6 +115,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	case DSN_MODE:
 		pOut->PrintMessage("Switching to Design Mode, creating Design tool bar");
 		pOut->CreateDesignToolBar();
+		break;
+
+	case SAVE:
+		pAct = new Save(this);
 		break;
 
 	case EXIT:
@@ -287,22 +292,22 @@ int ApplicationManager::GetConnCount() const
 {
 	return ConnCount;
 }
-//
-//void ApplicationManager::SaveChart(ofstream& OutFile)
-//{
-//	OutFile << StatCount << endl;
-//	for (int i = 0; i < StatCount; i++)
-//	{
-//		if (StatList[i] != NULL)
-//			StatList[i]->Save(OutFile);
-//	}
-//	OutFile << ConnCount << endl;
-//	for (int i = 0; i < ConnCount; i++)
-//	{
-//		if (ConnList[i] != NULL)
-//			ConnList[i]->Save(OutFile);
-//	}
-//}
+
+void ApplicationManager::SaveAll(ofstream& OutFile)
+{
+	OutFile << StatCount << endl;
+	for (int i = 0; i < StatCount; i++) //looping for all statements
+	{
+		if (StatList[i] != NULL)       //if a Statement is found
+			StatList[i]->Save(OutFile);//save statement
+	}
+	OutFile << ConnCount << endl;
+	for (int i = 0; i < ConnCount; i++) //looping for all connectors
+	{
+		if (ConnList[i] != NULL)       //if a connector is found
+			ConnList[i]->Save(OutFile);//save connector
+	}
+}
 
 bool ApplicationManager::FindIfValid()
 {

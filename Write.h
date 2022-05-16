@@ -3,7 +3,7 @@
 class Write : public Statement
 {
 private:
-	string OBJ;	//object in the assignment (name of a variable)
+	string VAR;	//object in the assignment (name of a variable)
 
 	Connector* pConn;	//Write Stat. has one Connector to next statement
 
@@ -17,10 +17,11 @@ private:
 
 public:
 	Write(Point Lcorner, string obj = "");
-	void setOBJ(const string& L);
-
+	void setVAR(const string& L);
 	virtual void Draw(Output* pOut) const;
 	Point getInlet();
 	Point getOutlet();
+	virtual void Save(ofstream& OutFile) ;	//Save the Statement parameters to a file
+
 };
 

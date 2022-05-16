@@ -3,10 +3,10 @@
 
 using namespace std;
 
-Write::Write(Point Lcorner, string obj)
+Write::Write(Point Lcorner, string var)
 {
 	type = "parallelogram";
-	OBJ = obj;
+	VAR = var;
 
 	UpdateStatementText();
 
@@ -21,9 +21,9 @@ Write::Write(Point Lcorner, string obj)
 	Outlet.y = LeftCorner.y + UI.ASSGN_HI;
 }
 
-void Write::setOBJ(const string& obj)
+void Write::setVAR(const string& var)
 {
-	OBJ = obj;
+	VAR = var;
 	UpdateStatementText();
 }
 
@@ -40,13 +40,13 @@ void Write::Draw(Output* pOut) const
 //This function should be called when LHS or RHS changes
 void Write::UpdateStatementText()
 {
-	if (OBJ == "")	//No left handside ==>statement have no valid text yet
+	if (VAR == "")	//No left handside ==>statement have no valid text yet
 		Text = " ";
 	else
 	{
 		//Build the statement text: Left handside then equals then right handside
 		ostringstream T;
-		T << OBJ;
+		T << VAR;
 		Text = T.str();
 	}
 }
@@ -71,4 +71,10 @@ Point  Write::getOutlet()
 {
 	Point Outletr = Outlet;
 	return Outletr;
+}
+
+void Write::Save(ofstream& OutFile)
+{
+	OutFile << "WRITE" << "           " << ID << "  " << LeftCorner.x << "  " << LeftCorner.y << "  " << VAR << endl;
+	
 }

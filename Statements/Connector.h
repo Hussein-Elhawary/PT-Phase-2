@@ -36,6 +36,8 @@ public:
 	virtual void getconnectorcords(Point& Startg, Point& Endg);
 	void unselectconn();
 	void SetSelected(bool s);
+	virtual void Save(ofstream& OutFile);	//Save the connector parameters to a file
+
 };
 
 #endif

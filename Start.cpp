@@ -56,3 +56,9 @@ Connector* Start::Getconnect()
 {
 	return pConn;
 }
+
+void Start::Save(ofstream& OutFile)
+{
+	OutFile << "START" << "           " << ID << "  " << LeftCorner.x << "  " << LeftCorner.y << " " << endl;
+	
+}

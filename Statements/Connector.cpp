@@ -69,6 +69,11 @@ void Connector::SetSelected(bool s)
 
 }
 
+void Connector::Save(ofstream& OutFile)
+{
+	OutFile << SrcStat->GetID() << "  " << DstStat->GetID() << "  " << endl;
+}
+
 void Connector::getconnectorcords(Point& Startg, Point& Endg)
 {
 	Startg = Start;
