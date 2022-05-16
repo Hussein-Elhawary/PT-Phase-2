@@ -45,6 +45,7 @@ public:
 	Statement *GetSelectedStatement() const;	//Returns the selected Statement
 	void SetSelectedStatement(Statement *pStat); //Set the Statement selected by the user
 	int GetStatCount()const;                    //Returns number of exisiting statments
+	int GetConnCount()const;                    //Returns number of exisiting connectors
 
 		
 	// -- Interface Management Functions
@@ -53,6 +54,8 @@ public:
 	void UpdateInterface() const;	//Redraws all the drawing window
 	//void SaveChart(ofstream& OutFile); //saves the flowchart
 	bool FindIfValid();
+	void SaveChart(ofstream& OutFile);
+
 };
 
 #endif

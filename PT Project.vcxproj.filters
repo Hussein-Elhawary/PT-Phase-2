@@ -194,6 +194,7 @@
       <Filter>Action Classes</Filter>
     </ClCompile>
     <ClCompile Include="Select.cpp" />
+    <ClCompile Include="Save.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -330,6 +331,7 @@
       <Filter>Action Classes</Filter>
     </ClInclude>
     <ClInclude Include="Select.h" />
+    <ClInclude Include="Save.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

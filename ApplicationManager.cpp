@@ -250,6 +250,10 @@ int ApplicationManager::GetStatCount()const
 {
 	return StatCount;
 }
+int ApplicationManager::GetConnCount() const
+{
+	return ConnCount;
+}
 //
 //void ApplicationManager::SaveChart(ofstream& OutFile)
 //{

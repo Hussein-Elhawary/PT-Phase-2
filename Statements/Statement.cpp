@@ -55,10 +55,10 @@ Point Statement::getOutletno()
 	return NULL;
 }
 
-Connector* Statement::Getconnect()
-{
-	return NULL;
-}
+//Connector* Statement::Getconnect()
+//{
+//	return NULL;
+//}
 
 void Statement::unselectstat()
 {
