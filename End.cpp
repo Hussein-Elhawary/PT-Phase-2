@@ -6,7 +6,7 @@ using namespace std;
 End::End(Point Lcorner)
 {
 	Outlet = NULL;
-	type = "ellipse";
+	type = "endellipse";
 	LeftCorner = Lcorner;
 
 	pConn = NULL;	//No connectors yet
@@ -31,10 +31,10 @@ void End::UpdateStatementText()
 
 Point End::getstatmentposition()
 {
-	LeftCorner.x + UI.ASSGN_WDTH / 2;
-	LeftCorner.y + UI.ASSGN_HI / 2;
-	return LeftCorner ;
-
+	Point center;
+	center.x = LeftCorner.x + UI.ASSGN_WDTH/2;
+	center.y = LeftCorner.y + UI.ASSGN_HI / 2;
+	return center;
 }
 
 Point End::getInlet()
@@ -48,4 +48,9 @@ Point End::getOutlet()
 {
 	Point Outletr = Outlet;
 	return Outletr;
+}
+
+Connector* End::Getconnect()
+{
+	return pConn;
 }

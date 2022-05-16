@@ -58,9 +58,10 @@ void SmplAssign::UpdateStatementText()
 
 Point SmplAssign::getstatmentposition()
 {
-	LeftCorner.x + UI.ASSGN_WDTH / 2;
-	LeftCorner.y + UI.ASSGN_HI / 2;
-	return LeftCorner;
+	Point center;
+	center.x = LeftCorner.x + UI.ASSGN_WDTH / 2;
+	center.y = LeftCorner.y + UI.ASSGN_HI / 2;
+	return center;
 }
 
 Point  SmplAssign::getInlet()
@@ -74,4 +75,9 @@ Point  SmplAssign::getOutlet()
 {
 	Point Outletr = Outlet;
 	return Outletr;
+}
+
+Connector* SmplAssign::Getconnect()
+{
+	return pConn;
 }

@@ -76,9 +76,15 @@ void SingleOperator::UpdateStatementText()
 
 Point SingleOperator::getstatmentposition()
 {
-	LeftCorner.x + UI.ASSGN_WDTH / 2;
-	LeftCorner.y + UI.ASSGN_HI / 2;
-	return LeftCorner;
+	Point center;
+	center.x = LeftCorner.x + UI.ASSGN_WDTH / 2;
+	center.y = LeftCorner.y + UI.ASSGN_HI / 2;
+	return center;
+}
+
+Connector* SingleOperator::Getconnect()
+{
+	return pConn;
 }
 
 Point SingleOperator::getInlet()

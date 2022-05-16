@@ -29,5 +29,7 @@ public:
 	virtual void Draw(Output* pOut) const;
 	Point getInlet();
 	Point getOutlet();
+	Connector* GetYes_Conn();
+	Connector* GetNo_Conn();
 };
 

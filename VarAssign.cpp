@@ -59,9 +59,10 @@ void VarAssign::UpdateStatementText()
 
 Point VarAssign::getstatmentposition()
 {
-	LeftCorner.x + UI.ASSGN_WDTH / 2;
-	LeftCorner.y + UI.ASSGN_HI / 2;
-	return LeftCorner;
+	Point center;
+	center.x = LeftCorner.x + UI.ASSGN_WDTH / 2;
+	center.y = LeftCorner.y + UI.ASSGN_HI / 2;
+	return center;
 }
 
 Point VarAssign::getInlet()
@@ -75,4 +76,9 @@ Point VarAssign::getOutlet()
 {
 	Point Outletr = Outlet;
 	return Outletr;
+}
+
+Connector* VarAssign::Getconnect()
+{
+	return pConn;
 }

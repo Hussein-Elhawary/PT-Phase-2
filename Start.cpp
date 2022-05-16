@@ -6,7 +6,7 @@ using namespace std;
 Start::Start(Point Lcorner)
 {
 	Inlet = NULL;
-	type = "ellipse";
+	type = "startellipse";
 	LeftCorner = Lcorner;
 
 	pConn = NULL;	//No connectors yet
@@ -32,9 +32,10 @@ void Start::UpdateStatementText()
 
 Point Start::getstatmentposition()
 {
-	LeftCorner.x + UI.ASSGN_WDTH / 2;
-	LeftCorner.y + UI.ASSGN_HI / 2;
-	return LeftCorner;
+	Point center;
+	center.x = LeftCorner.x + UI.ASSGN_WDTH / 2;
+	center.y = LeftCorner.y + UI.ASSGN_HI / 2;
+	return center;
 
 }
 
@@ -49,4 +50,9 @@ Point Start::getOutlet()
 {
 	Point Outletr = Outlet;
 	return Outletr;
+}
+
+Connector* Start::Getconnect()
+{
+	return pConn;
 }

@@ -25,6 +25,7 @@ public:
 	Point getstatmentposition();
 	Point getInlet();
 	Point getOutlet();
+	virtual Connector* Getconnect();
 	
 };
 

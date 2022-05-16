@@ -17,7 +17,7 @@ CondStatement::CondStatement(Point Lcorner, string LeftHS, string op,string Righ
 	Yes_Conn = NULL;	//No connectors yet
 	No_Conn = NULL;	//No connectors yet
 
-	Inlet.x = LeftCorner.x + UI.ASSGN_WDTH / 2;
+	Inlet.x = LeftCorner.x  ;
 	Inlet.y = LeftCorner.y;
 
 	Outlet = NULL;
@@ -74,9 +74,10 @@ void CondStatement::UpdateStatementText()
 
 Point CondStatement::getstatmentposition()
 {
-	LeftCorner.x + UI.ASSGN_WDTH/2;
-	LeftCorner.y + UI.ASSGN_HI/2;
-	return LeftCorner;
+	Point center;
+	center.x = LeftCorner.x;
+	center.y=LeftCorner.y + UI.ASSGN_HI/2;
+	return center;
 
 }
 
@@ -91,4 +92,14 @@ Point CondStatement::getOutlet()
 {
 	Point Outletr = Outlet;
 	return Outletr;
+}
+
+Connector* CondStatement::GetNo_Conn()
+{
+	return No_Conn;
+}
+
+Connector* CondStatement::GetYes_Conn()
+{
+	return Yes_Conn;
 }

@@ -2,7 +2,7 @@
 #define APPLICATION_MANAGER_H
 
 #include "DEFS.h"
-
+#include "CondStatement.h"
 #include "Statements\Statement.h"
 class Input;
 class Output;
@@ -52,7 +52,7 @@ public:
 	Output *GetOutput() const; //Return pointer to the output
 	void UpdateInterface() const;	//Redraws all the drawing window
 	//void SaveChart(ofstream& OutFile); //saves the flowchart
-	
+	bool FindIfValid();
 };
 
 #endif
