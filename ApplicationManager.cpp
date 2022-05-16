@@ -236,6 +236,7 @@ Statement* ApplicationManager::GetSelectedStatement() const
 void ApplicationManager::SetSelectedStatement(Statement* pStat)
 {
 	pSelectedStat = pStat;
+	pSelectedConn = NULL;
 }
 
 Connector* ApplicationManager::GetSelectedConnector() const
@@ -248,6 +249,7 @@ Connector* ApplicationManager::GetSelectedConnector() const
 void ApplicationManager::SetSelectedConnector(Connector* pConn)
 {
 	pSelectedConn = pConn;
+	pSelectedStat = NULL;
 }
 
 //==================================================================================//

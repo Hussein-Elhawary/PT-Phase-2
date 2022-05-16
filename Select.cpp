@@ -41,11 +41,14 @@ void Select::Execute()
 		{
 			pManager->GetSelectedStatement()->unselectstat();
 		}
-		unselectstat(S_ptr);
-		unselectconn(C_ptr);
-		pManager->SetSelectedStatement(S_ptr);  // Selecting the last selected statement pointer to the new selected statement
+		if (pManager->GetSelectedConnector() != NULL)
+		{
+			pManager->GetSelectedConnector()->unselectconn();
+		}
+		
+									// Selecting the last selected statement pointer to the new selected statement
 		S_ptr->SetSelected(true);
-
+		pManager->SetSelectedStatement(S_ptr);
 	}
 
 	if (C_ptr != NULL)
@@ -54,11 +57,14 @@ void Select::Execute()
 		{
 			pManager->GetSelectedConnector()->unselectconn();
 		}
-		unselectconn(C_ptr);
-		unselectstat(S_ptr);
-		pManager->SetSelectedConnector(C_ptr);  // Selecting the last selected statement pointer to the new selected statement
-		C_ptr->SetSelected(true);
-
+		if (pManager->GetSelectedStatement() != NULL)
+		{
+			pManager->GetSelectedStatement()->unselectstat();
+		}
+		
+			 // Selecting the last selected statement pointer to the new selected statement
+		C_ptr->SetSelected(true); 
+		pManager->SetSelectedConnector(C_ptr);
 
 	}
 

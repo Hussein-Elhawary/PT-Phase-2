@@ -7,7 +7,7 @@ Statement::Statement()
 	
 }
 
-void Statement::SetSelected(bool s)
+void Statement::SetSelected(bool s )
 {	Selected = s; }
 
 bool Statement::IsSelected() const
