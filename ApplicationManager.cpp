@@ -161,7 +161,7 @@ Statement* ApplicationManager::GetStatement(Point P) const
 
 		
 		{
-			if (abs(Centerpoint.x - P.x) <= UI.ASSGN_WDTH && abs(Centerpoint.y - P.y) <= UI.ASSGN_HI)
+			if (abs(Centerpoint.x - P.x) <= UI.ASSGN_WDTH/2 && abs(Centerpoint.y - P.y) <= UI.ASSGN_HI/2)
 			{
 
 				return StatList[i];
@@ -198,8 +198,30 @@ void ApplicationManager::AddConnector(Connector* pConn)
 	if (ConnCount < MaxCount)
 			ConnList[ConnCount++] = pConn;
 }
+
+
 Connector* ApplicationManager::GetConnector(Point P) const
 {
+	Point Start;
+	Point End;
+	for (int i = 0; i < ConnCount; i++)
+	{
+		ConnList[i]->getconnectorcords(Start,End);
+		{
+			if ((abs(P.x-Start.x)<=5 && P.y>=Start.y && P.y<=End.y)||(abs(P.y-End.y+15)<=5 && P.x >= Start.x && P.x <= End.x))
+			{
+
+				return ConnList[i];
+
+			}
+		}
+	}
+	//Start.x, Start.y, Start.x, End.y - 15,
+	//Start.x, End.y - 15, End.x, End.y - 15
+	//End.x, End.y - 15, End.x, End.y,
+
+
+
 	return nullptr;
 }
 ////////////////////////////////////////////////////////////////////////////////////
@@ -216,6 +238,17 @@ void ApplicationManager::SetSelectedStatement(Statement* pStat)
 	pSelectedStat = pStat;
 }
 
+Connector* ApplicationManager::GetSelectedConnector() const
+{
+	return pSelectedConn;
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+//Set the statement selected by the user
+void ApplicationManager::SetSelectedConnector(Connector* pConn)
+{
+	pSelectedConn = pConn;
+}
 
 //==================================================================================//
 //							Interface Management Functions							//

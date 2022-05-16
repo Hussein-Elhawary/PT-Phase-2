@@ -16,4 +16,5 @@ public:
     void ReadActionParameters();
     void Execute();
     void unselectstat(Statement* stat);
+    void unselectconn(Connector* Conn);
 };

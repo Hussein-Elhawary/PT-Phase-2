@@ -6,6 +6,7 @@ Connector::Connector(Statement* Src, Statement* Dst)
 {
 	SrcStat = Src;
 	DstStat = Dst;
+	selected = false;
 }
 
 Connector::Connector(Point startc, Point endc)
@@ -54,5 +55,23 @@ void Connector::UpdateStatementText()
 Point Connector::getstatmentposition()
 {
 	return Start;
+
+}
+void Connector::unselectconn()
+{
+	selected = false;
+
+}
+
+void Connector::SetSelected(bool s)
+{
+	selected = s;
+
+}
+
+void Connector::getconnectorcords(Point& Startg, Point& Endg)
+{
+	Startg = Start;
+	Endg = End;
 
 }

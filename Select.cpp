@@ -18,6 +18,18 @@ void Select::ReadActionParameters()
 	S_ptr = pManager->GetStatement(Position);		//waiting for zahar's function
 	C_ptr = pManager->GetConnector(Position);
 
+	while (S_ptr == NULL && C_ptr==NULL)
+	{
+		pOut->PrintMessage("Try Selecting again: Click to select the statement/connector");
+		pIn->GetPointClicked(Position);
+		S_ptr = pManager->GetStatement(Position);		//waiting for zahar's function
+		C_ptr = pManager->GetConnector(Position);
+		if (Position.y < UI.height)
+		{
+			break;
+		}
+	}
+
 }
 
 void Select::Execute()
@@ -35,6 +47,18 @@ void Select::Execute()
 
 	}
 
+	if (C_ptr != NULL)
+	{
+		if (pManager->GetSelectedConnector() != NULL)
+		{
+			pManager->GetSelectedConnector()->unselectconn();
+		}
+		unselectconn(C_ptr);
+		pManager->SetSelectedConnector(C_ptr);  // Selecting the last selected statement pointer to the new selected statement
+		C_ptr->SetSelected(true);
+
+	}
+
 }
 
 void Select::unselectstat(Statement * stat)
@@ -45,4 +69,12 @@ void Select::unselectstat(Statement * stat)
 	pManager->SetSelectedStatement(NULL);
 	}
 
+}
+void Select::unselectconn(Connector* Conn)
+{
+	Conn->unselectconn();
+	if (pManager->GetSelectedConnector() == Conn)
+	{
+		pManager->SetSelectedConnector(NULL);
+	}
 }

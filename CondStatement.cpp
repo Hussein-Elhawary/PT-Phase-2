@@ -22,11 +22,11 @@ CondStatement::CondStatement(Point Lcorner, string LeftHS, string op,string Righ
 
 	Outlet = NULL;
 
-	Yes_Outlet.x = LeftCorner.x	+UI.ASSGN_WDTH/3;
-	Yes_Outlet.y = LeftCorner.y + UI.ASSGN_HI/2;
+	Yes_Outlet.x = LeftCorner.x	+UI.ASSGN_WDTH/2;
+	Yes_Outlet.y = LeftCorner.y + UI.ASSGN_HI/2+10;
 
-	No_Outlet.x = LeftCorner.x - UI.ASSGN_WDTH/3;
-	No_Outlet.y = LeftCorner.y + UI.ASSGN_HI / 2;
+	No_Outlet.x = LeftCorner.x - UI.ASSGN_WDTH/2;
+	No_Outlet.y = LeftCorner.y + UI.ASSGN_HI / 2+10;
 }
 
 void CondStatement::setLHS(const string& L)
