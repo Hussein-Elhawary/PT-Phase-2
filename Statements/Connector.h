@@ -13,6 +13,7 @@ private:
 	Statement *DstStat;	//The destination statement of the connector
 	Point Start;	//Start point of the connector
 	Point End;		//End point of the connector
+
 public:
 	Connector(Statement* Src, Statement* Dst);
 	Connector(Point startc, Point endc);

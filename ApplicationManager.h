@@ -20,6 +20,7 @@ private:
 	Connector* ConnList[MaxCount];	//List of all connectors (Array of pointers)
 
 	Statement *pSelectedStat; //a pointer to the last selected statement
+	Connector *pSelectedConn; //a pointer to the last selected Connector
 
 	//Pointers to Input and Output classes
 	Input *pIn;
@@ -46,6 +47,8 @@ public:
 	void SetSelectedStatement(Statement *pStat); //Set the Statement selected by the user
 	int GetStatCount()const;                    //Returns number of exisiting statments
 
+	Connector* GetSelectedConnector() const;
+	void SetSelectedConnector(Connector* pConn);
 		
 	// -- Interface Management Functions
 	Input *GetInput() const; //Return pointer to the input

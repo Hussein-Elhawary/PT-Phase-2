@@ -56,3 +56,8 @@ Point Connector::getstatmentposition()
 	return Start;
 
 }
+void Connector::unselectstat()
+{
+	Selected = false;
+
+}

@@ -46,3 +46,11 @@ void Select::unselectstat(Statement * stat)
 	}
 
 }
+void Select::unselectstat(Connector* Conn)
+{
+	Conn->unselectstat();
+	if (pManager->GetSelectedConnector() == Conn)
+	{
+		pManager->SetSelectedConnector(NULL);
+	}
+}

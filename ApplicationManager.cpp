@@ -216,6 +216,17 @@ void ApplicationManager::SetSelectedStatement(Statement* pStat)
 	pSelectedStat = pStat;
 }
 
+Connector* ApplicationManager::GetSelectedConnector() const
+{
+	return pSelectedConn;
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+//Set the statement selected by the user
+void ApplicationManager::SetSelectedConnector(Connector* pConn)
+{
+	pSelectedConn = pConn;
+}
 
 //==================================================================================//
 //							Interface Management Functions							//
