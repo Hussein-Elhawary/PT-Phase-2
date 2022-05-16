@@ -104,7 +104,10 @@ void Addconector::Execute()
 		}
 	}
 	Connector* pAssign = new Connector(start, end);
+	pAssign->setSrcStat(Source);
+	pAssign->setDstStat(Destination);
 	pAssign->Draw(pOut);
 
+	pManager->AddConnector(pAssign);
 }
 //still in progress

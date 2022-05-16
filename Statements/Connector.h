@@ -33,6 +33,8 @@ public:
 	void Draw(Output* pOut) const;
 	virtual void UpdateStatementText();
 	virtual Point getstatmentposition();
+	virtual void getconnectorcords(Point& Startg, Point& Endg);
+
 };
 
 #endif

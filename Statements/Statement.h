@@ -36,7 +36,7 @@ public:
 	virtual int getwidth();
 	virtual Point getInlet();
 	virtual Point getOutlet();
-	virtual Connector* Getconnect();
+	//virtual Connector* Getconnect();
 	virtual Point getOutletyes();
 	virtual Point getOutletno();
 	virtual void unselectstat();

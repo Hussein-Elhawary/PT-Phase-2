@@ -18,6 +18,14 @@ void Select::ReadActionParameters()
 	S_ptr = pManager->GetStatement(Position);		//waiting for zahar's function
 	C_ptr = pManager->GetConnector(Position);
 
+	while (S_ptr == NULL && C_ptr==NULL)
+	{
+		pOut->PrintMessage("Try Selecting again: Click to select the statement/connector");
+		pIn->GetPointClicked(Position);
+		S_ptr = pManager->GetStatement(Position);		//waiting for zahar's function
+		C_ptr = pManager->GetConnector(Position);
+	}
+
 }
 
 void Select::Execute()
