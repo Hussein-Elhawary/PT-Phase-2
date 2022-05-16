@@ -27,5 +27,7 @@ public:
 
 	virtual Point getstatmentposition();
 	virtual void Draw(Output* pOut) const;
+	Point getInlet();
+	Point getOutlet();
 };
 

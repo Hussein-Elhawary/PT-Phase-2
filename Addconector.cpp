@@ -32,25 +32,37 @@ void Addconector::ReadActionParameters()
 	pIn->GetPointClicked(end);
 	pOut->ClearStatusBar();
 
-
-}
+	
+	Source = pManager->GetStatement(start);
+	Destination = pManager->GetStatement(end);
+	}
 
 void Addconector::Execute()
 {
 	ReadActionParameters();
 	
-	Statement *Source;
-	Statement *Destination;
+	//Statement *Source;
+	//Statement *Destination;
 
-	Source = pManager->GetStatement(start);
-	Destination = pManager->GetStatement(end);
-
+	//Source = pManager->GetStatement(start);
+	//while (Source == NULL);
+	//{
+	//	pOut->PrintMessage("Erorr ,press on starting Statement again:");
+	//	pIn->GetPointClicked(start);
+	//	pOut->ClearStatusBar();
+	//	Source = pManager->GetStatement(start);
+	//}
+	//Destination = pManager->GetStatement(end);
+	//
 	Input* pIn = pManager->GetInput();
 	Output* pOut = pManager->GetOutput();
 
-
-	Connector* pAssign = new Connector(Source, Destination);
+	if (Source != nullptr && Destination != nullptr)
+	{
+		start = Source->getInlet();
+		end = Destination->getOutlet();	
+	}
+	Connector* pAssign = new Connector(start, end);
 	pAssign->Draw(pOut);
-	
 }
 //still in progress

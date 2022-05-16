@@ -16,6 +16,8 @@ protected:
 	string type;
 	int width;
 	int height;
+	Point Inlet;
+	Point Outlet;
 
 	virtual void UpdateStatementText() = 0;	//is called when any part of the stat. is edited	
 
@@ -32,7 +34,8 @@ public:
 	virtual string gettype();
 	virtual int getheight();
 	virtual int getwidth();
-
+	virtual Point getInlet();
+	virtual Point getOutlet();
 	///TODO:The following functions should be supported by the Statement class
 	///		It should then be overridden by each derived Statement
 	///		Decide the parameters that you should pass to each function and its return type	

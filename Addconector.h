@@ -1,5 +1,7 @@
 #pragma once
 #include "Actions/Action.h"
+#include "Statements/Statement.h"
+
 class Addconector :public Action
 {
 	
@@ -7,6 +9,8 @@ class Addconector :public Action
 		Point start;
 		Point end;
 	public:
+		Statement* Source;
+		Statement* Destination;
 		Addconector(ApplicationManager* pAppManager);
 
 		//Read Assignemt statements position

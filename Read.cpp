@@ -51,6 +51,21 @@ void Read::UpdateStatementText()
 
 Point Read::getstatmentposition()
 {
+	LeftCorner.x + UI.ASSGN_WDTH / 2;
+	LeftCorner.y + UI.ASSGN_HI / 2;
 	return LeftCorner;
 
+}
+
+Point  Read::getInlet()
+{
+	Point Inletr = Inlet;
+
+	return Inletr;
+}
+
+Point Read::getOutlet()
+{
+	Point Outletr = Outlet;
+	return Outletr;
 }

@@ -3,7 +3,8 @@
 Statement::Statement()	
 { 
 	Text = "";
-	Selected = false;		
+	Selected = false;	
+	
 }
 
 void Statement::SetSelected(bool s)
@@ -31,4 +32,15 @@ Point Statement::getstatmentposition()
 	//not working yet
 	Point x(0, 1);
 	return x;
+}
+Point Statement::getInlet()
+{
+
+	return Inlet;
+}
+
+Point Statement::getOutlet()
+{
+
+	return Outlet;
 }

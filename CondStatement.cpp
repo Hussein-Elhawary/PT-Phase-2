@@ -20,6 +20,8 @@ CondStatement::CondStatement(Point Lcorner, string LeftHS, string op,string Righ
 	Inlet.x = LeftCorner.x + UI.ASSGN_WDTH / 2;
 	Inlet.y = LeftCorner.y;
 
+	Outlet = NULL;
+
 	Yes_Outlet.x = LeftCorner.x;
 	Yes_Outlet.y = LeftCorner.y + UI.ASSGN_HI/2;
 
@@ -72,7 +74,21 @@ void CondStatement::UpdateStatementText()
 
 Point CondStatement::getstatmentposition()
 {
-	LeftCorner.y - UI.ASSGN_HI / 2;
+	LeftCorner.x + UI.ASSGN_WDTH/2;
+	LeftCorner.y + UI.ASSGN_HI/2;
 	return LeftCorner;
 
+}
+
+Point CondStatement::getInlet()
+{
+	Point Inletr = Inlet;
+
+	return Inletr;
+}
+
+Point CondStatement::getOutlet()
+{
+	Point Outletr = Outlet;
+	return Outletr;
 }

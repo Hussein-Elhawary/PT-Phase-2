@@ -294,8 +294,10 @@ void Output::DrawConnector(Point Start, Point End, bool Selected)
 			int Zahar = 1;
 			exit(Zahar);	//this temrinates code if exit is pressed
 		}
-
+	
 	}
+	
+
 
 	drawstyle dsStyle = FRAME;
 	if (Selected)	//if stat is selected, it should be highlighted
@@ -304,40 +306,48 @@ void Output::DrawConnector(Point Start, Point End, bool Selected)
 		pWind->SetPen(UI.DrawClr, 3);	//use normal color
 
 	pWind->SetPen(BLACK, 2);
-	if (abs(Start.x - End.x) < 20)
-	{
-		End.x = Start.x;
-	}
-	if (abs(Start.y - End.y) < 20)
-	{
-		End.y = Start.y;
-	}
-	pWind->DrawLine(Start.x, Start.y, End.x, Start.y, dsStyle);
-	pWind->DrawLine(End.x, Start.y, End.x, End.y, dsStyle);
 
-	// conditions for drawing the arrow head
+	pWind->DrawLine(Start.x, Start.y, Start.x, End.y - 15, dsStyle);
+	pWind->DrawLine(Start.x, End.y - 15, End.x, End.y - 15, dsStyle);
+	pWind->DrawLine(End.x, End.y-15, End.x, End.y , dsStyle);
 
-	if (Start.y < End.y)
-	{
-		pWind->DrawLine(End.x, End.y, End.x + 10, End.y - 10, dsStyle);
-		pWind->DrawLine(End.x, End.y, End.x - 10, End.y - 10, dsStyle);
-	}
-	else if (Start.y > End.y)
-	{
-		pWind->DrawLine(End.x, End.y, End.x + 10, End.y + 10, dsStyle);
-		pWind->DrawLine(End.x, End.y, End.x - 10, End.y + 10, dsStyle);
-	}
-	else if (Start.x > End.x)
-	{
-		pWind->DrawLine(End.x, End.y, End.x + 10, End.y + 10, dsStyle);
-		pWind->DrawLine(End.x, End.y, End.x + 10, End.y - 10, dsStyle);
-	}
-	else
-	{
-		pWind->DrawLine(End.x, End.y, End.x - 10, End.y - 10, dsStyle);
-		pWind->DrawLine(End.x, End.y, End.x - 10, End.y + 10, dsStyle);
-	}
+	pWind->DrawLine(End.x, End.y, End.x + 10, End.y - 10, dsStyle);
+	pWind->DrawLine(End.x, End.y, End.x - 10, End.y - 10, dsStyle);
 
+	//if (abs(Start.x - End.x) < 20)
+	//{
+	//	End.x = Start.x;
+	//}
+	//if (abs(Start.y - End.y) < 20)
+	//{
+	//	End.y = Start.y;
+	//}
+	//pWind->DrawLine(Start.x, Start.y, End.x, Start.y, dsStyle);
+	//pWind->DrawLine(End.x, Start.y, End.x, End.y, dsStyle);
+	//
+	//// conditions for drawing the arrow head
+	//
+	//if (Start.y < End.y)
+	//{
+	//	pWind->DrawLine(End.x, End.y, End.x + 10, End.y - 10, dsStyle);
+	//	pWind->DrawLine(End.x, End.y, End.x - 10, End.y - 10, dsStyle);
+	//}
+	//else if (Start.y > End.y)
+	//{
+	//	pWind->DrawLine(End.x, End.y, End.x + 10, End.y + 10, dsStyle);
+	//	pWind->DrawLine(End.x, End.y, End.x - 10, End.y + 10, dsStyle);
+	//}
+	//else if (Start.x > End.x)
+	//{
+	//	pWind->DrawLine(End.x, End.y, End.x + 10, End.y + 10, dsStyle);
+	//	pWind->DrawLine(End.x, End.y, End.x + 10, End.y - 10, dsStyle);
+	//}
+	//else
+	//{
+	//	pWind->DrawLine(End.x, End.y, End.x - 10, End.y - 10, dsStyle);
+	//	pWind->DrawLine(End.x, End.y, End.x - 10, End.y + 10, dsStyle);
+	//}
+	//
 }
 
 void Output::DrawRead(Point Left, int width, int height, string Text, bool Selected)

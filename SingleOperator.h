@@ -23,6 +23,8 @@ public:
 	void setRHS1(const string& R1);
 	void setOP(const string& op);
 	void setRHS2(const string& R2);
+	Point getInlet();
+	Point getOutlet();
 
 	virtual void Draw(Output* pOut) const;
 	//virtual void PrintInfo(Output* pOut);

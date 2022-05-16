@@ -15,7 +15,9 @@ private:
 	Point End;		//End point of the connector
 public:
 	Connector(Statement* Src, Statement* Dst);
-
+	Connector(Point startc, Point endc);
+	Point getInlet();
+	Point getOutlet();
 	void		setSrcStat(Statement *Src);
 	Statement*	getSrcStat();	
 	void		setDstStat(Statement *Dst);

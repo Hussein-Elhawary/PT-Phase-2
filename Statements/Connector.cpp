@@ -8,6 +8,12 @@ Connector::Connector(Statement* Src, Statement* Dst)
 	DstStat = Dst;
 }
 
+Connector::Connector(Point startc, Point endc)
+{
+	Start = startc;
+	End = endc;
+}
+
 void Connector::setSrcStat(Statement *Src)
 {	SrcStat = Src;	}
 

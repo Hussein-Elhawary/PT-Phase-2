@@ -5,6 +5,7 @@ using namespace std;
 
 Start::Start(Point Lcorner)
 {
+	Inlet = NULL;
 	type = "ellipse";
 	LeftCorner = Lcorner;
 
@@ -31,7 +32,21 @@ void Start::UpdateStatementText()
 
 Point Start::getstatmentposition()
 {
-	LeftCorner.y - UI.ASSGN_HI / 2;
+	LeftCorner.x + UI.ASSGN_WDTH / 2;
+	LeftCorner.y + UI.ASSGN_HI / 2;
 	return LeftCorner;
 
+}
+
+Point Start::getInlet()
+{
+	Point Inletr = Inlet;
+
+	return Inletr;
+}
+
+Point Start::getOutlet()
+{
+	Point Outletr = Outlet;
+	return Outletr;
 }

@@ -32,6 +32,7 @@ struct UI_Info	//User Interface Info.
 
 struct Point	
 {
+	
 	int x,y;
 	Point(int a=0, int b=0)	//constructor
 	{ x=a;	y=b;	}

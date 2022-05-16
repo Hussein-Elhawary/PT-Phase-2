@@ -20,5 +20,7 @@ public:
 	void setOBJ(const string& L);
 
 	virtual void Draw(Output* pOut) const;
+	Point getInlet();
+	Point getOutlet();
 };
 

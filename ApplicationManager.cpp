@@ -137,7 +137,7 @@ void ApplicationManager::AddStatement(Statement *pStat)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
-Statement *ApplicationManager::GetStatement(Point P) const
+Statement * ApplicationManager::GetStatement(Point P) const
 {
 	//If this point P(x,y) belongs to a statement return a pointer to it.
 	//otherwise, return NULL
@@ -146,27 +146,39 @@ Statement *ApplicationManager::GetStatement(Point P) const
 	///Add your code here to search for a statement given a point P(x,y)	
 	for (int i = 0; i < StatCount; i++)
 	{
-		Point leftcorner = StatList[i]->getstatmentposition();
+		Point Centerpoint = StatList[i]->getstatmentposition();
 
-		Point RightCorner;
-		RightCorner.x = leftcorner.x + UI.ASSGN_WDTH; // calculated all the corners just in case
-		RightCorner.y = leftcorner.y ;
-
-		Point BottomLeftCorner;
-		BottomLeftCorner.x = leftcorner.x;
-		BottomLeftCorner.y = leftcorner.y + UI.ASSGN_HI;
-
-		Point BottomRightCorner;
-		BottomRightCorner.x = leftcorner.x + UI.ASSGN_WDTH;
-		BottomRightCorner.y = leftcorner.y + UI.ASSGN_HI;
-
-		string type = StatList[i]->gettype();
-
-		if (P.x >= leftcorner.x && P.x <= RightCorner.x && P.y >= BottomLeftCorner.y && P.y <= RightCorner.y)
+		for(int i = 0;  i< MaxCount ; i++)
+		{ 
+		if (abs(Centerpoint.x-P.x)<=UI.ASSGN_WDTH && abs(Centerpoint.y - P.y) <= UI.ASSGN_HI)
 		{
-			
-		return StatList[i];
+
+			return StatList[i];
+
 		}
+		}
+
+
+
+		//Point RightCorner;
+		//RightCorner.x = leftcorner.x + UI.ASSGN_WDTH; // calculated all the corners just in case
+		//RightCorner.y = leftcorner.y ;
+
+		//Point BottomLeftCorner;
+		//BottomLeftCorner.x = leftcorner.x;
+		//BottomLeftCorner.y = leftcorner.y + UI.ASSGN_HI;
+		//
+		//Point BottomRightCorner;
+		//BottomRightCorner.x = leftcorner.x + UI.ASSGN_WDTH;
+		//BottomRightCorner.y = leftcorner.y + UI.ASSGN_HI;
+		//
+		//string type = StatList[i]->gettype();
+		//
+		//if (P.x >= leftcorner.x && P.x <= RightCorner.x && P.y >= BottomLeftCorner.y && P.y <= RightCorner.y)
+		//{
+		//	
+		//return StatList[i];
+		//}
 	}
 	return NULL;
 }
