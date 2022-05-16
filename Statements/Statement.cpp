@@ -44,3 +44,24 @@ Point Statement::getOutlet()
 
 	return Outlet;
 }
+
+Point Statement::getOutletyes()
+{
+	return NULL;
+}
+
+Point Statement::getOutletno()
+{
+	return NULL;
+}
+
+Connector* Statement::Getconnect()
+{
+	return NULL;
+}
+
+void Statement::unselectstat()
+{
+	Selected = false;
+
+}

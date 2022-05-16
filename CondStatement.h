@@ -30,6 +30,8 @@ public:
 	Point getInlet();
 	Point getOutlet();
 	Connector* GetYes_Conn();
-	Connector* GetNo_Conn();
+	Connector* GetNo_Conn(); 
+	Point getOutletyes();
+	Point getOutletno();
 };
 

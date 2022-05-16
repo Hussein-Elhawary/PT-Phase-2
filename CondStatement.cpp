@@ -22,10 +22,10 @@ CondStatement::CondStatement(Point Lcorner, string LeftHS, string op,string Righ
 
 	Outlet = NULL;
 
-	Yes_Outlet.x = LeftCorner.x;
+	Yes_Outlet.x = LeftCorner.x	+UI.ASSGN_WDTH/3;
 	Yes_Outlet.y = LeftCorner.y + UI.ASSGN_HI/2;
 
-	No_Outlet.x = LeftCorner.x + UI.ASSGN_WDTH;
+	No_Outlet.x = LeftCorner.x - UI.ASSGN_WDTH/3;
 	No_Outlet.y = LeftCorner.y + UI.ASSGN_HI / 2;
 }
 
@@ -102,4 +102,16 @@ Connector* CondStatement::GetNo_Conn()
 Connector* CondStatement::GetYes_Conn()
 {
 	return Yes_Conn;
+}
+
+Point CondStatement::getOutletyes()
+{
+	return Yes_Outlet;
+
+}
+
+Point CondStatement::getOutletno()
+{
+	return No_Outlet;
+
 }

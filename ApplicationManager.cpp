@@ -269,53 +269,55 @@ int ApplicationManager::GetStatCount()const
 
 bool ApplicationManager::FindIfValid()
 {
-	if (StatCount == 0) 
-	{
-		pOut->PrintMessage("There is no chart");
-		return false;
-	}
+	//if (StatCount == 0) 
+	//{
+	//	pOut->PrintMessage("There is no chart");
+	//	return false;
+	//}
+	//
+	//int stcount = 0, endcount = 0;
+	//bool flag = true;
+	//
+	//for (int i = 0; i < StatCount; i++) {
+	//	if (StatList[i]->gettype()=="startellipse")
+	//		++stcount;
+	//	else if (StatList[i]->gettype() == "endellipse")
+	//		++endcount;
+	//
+	//	//check the statement to be connected as a source
+	//	if (StatList[i]->Getconnect() == NULL && (StatList[i]->gettype() != "endellipse")  && (StatList[i]->gettype() != "rhombus"))
+	//	{
+	//		flag = false;
+	//		break;
+	//	}
+	//	//check the statement to be connected as a destination
+	//	if (!(StatList[i]->GetConnected()) && (StatList[i]->gettype() != "startellipse"))
+	//	{
+	//		flag = false;
+	//		break;
+	//	}
+	//	if (StatList[i]->gettype() != "rhombus") {
+	//		CondStatement* p = (CondStatement*)StatList[i];
+	//		if (p->GetNo_Conn() == NULL || p->GetYes_Conn() == NULL) {
+	//			flag = false;
+	//			break;
+	//		}
+	//	}
+	//}
+	//if (stcount != 1 || endcount != 1) {
+	//	flag = false;
+	//}
+	//
+	//if (!flag)
+	//	pOut->PrintMessage("Invalid Chart !! check the statements and again.");
+	//else
+	//	pOut->PrintMessage("Good Work , The Chart is Valid");
+	//
+	//return flag;
+	//
+	//
 
-	int stcount = 0, endcount = 0;
-	bool flag = true;
-
-	for (int i = 0; i < StatCount; i++) {
-		if (StatList[i]->gettype()=="startellipse")
-			++stcount;
-		else if (StatList[i]->gettype() == "endellipse")
-			++endcount;
-
-		//check the statement to be connected as a source
-		if (StatList[i]->Getconnect() == NULL && (StatList[i]->gettype() != "endellipse")  && (StatList[i]->gettype() != "rhombus"))
-		{
-			flag = false;
-			break;
-		}
-		//check the statement to be connected as a destination
-		if (!(StatList[i]->GetConnected()) && (StatList[i]->gettype() != "startellipse"))
-		{
-			flag = false;
-			break;
-		}
-		if (StatList[i]->gettype() != "rhombus") {
-			CondStatement* p = (CondStatement*)StatList[i];
-			if (p->GetNo_Conn() == NULL || p->GetYes_Conn() == NULL) {
-				flag = false;
-				break;
-			}
-		}
-	}
-	if (stcount != 1 || endcount != 1) {
-		flag = false;
-	}
-
-	if (!flag)
-		pOut->PrintMessage("Invalid Chart !! check the statements and again.");
-	else
-		pOut->PrintMessage("Good Work , The Chart is Valid");
-
-	return flag;
-	
-
+	return true;
 }
 
 //Destructor

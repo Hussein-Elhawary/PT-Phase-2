@@ -15,4 +15,5 @@ public:
     Select(ApplicationManager* pAppManager);
     void ReadActionParameters();
     void Execute();
+    void unselectstat(Statement* stat);
 };

@@ -36,7 +36,10 @@ public:
 	virtual int getwidth();
 	virtual Point getInlet();
 	virtual Point getOutlet();
-	virtual Connector* Getconnect() { return NULL; }
+	virtual Connector* Getconnect();
+	virtual Point getOutletyes();
+	virtual Point getOutletno();
+	virtual void unselectstat();
 	///TODO:The following functions should be supported by the Statement class
 	///		It should then be overridden by each derived Statement
 	///		Decide the parameters that you should pass to each function and its return type	

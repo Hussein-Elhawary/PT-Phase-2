@@ -23,6 +23,7 @@ void Addconector::ReadActionParameters()
 	//SmplAssign* ps=NULL;
 	Input* pIn = pManager->GetInput();
 	Output* pOut = pManager->GetOutput();
+	
 
 	pOut->PrintMessage("press on starting Statement:");
 	pIn->GetPointClicked(start);
@@ -35,12 +36,30 @@ void Addconector::ReadActionParameters()
 	
 	Source = pManager->GetStatement(start);
 	Destination = pManager->GetStatement(end);
+
+	while (Source == nullptr)
+	{
+		pOut->PrintMessage("Re-click on starting Statement:");
+		pIn->GetPointClicked(start);
+		pOut->ClearStatusBar();
+		Source = pManager->GetStatement(start);
+	}
+
+	while (Destination == nullptr)
+	{
+
+		pOut->PrintMessage("Re-click on Ending Statement:");
+		pIn->GetPointClicked(end);
+		pOut->ClearStatusBar();
+		Destination = pManager->GetStatement(end);
+	}
+
 	}
 
 void Addconector::Execute()
 {
 	ReadActionParameters();
-	
+	string usertext;
 	//Statement *Source;
 	//Statement *Destination;
 
@@ -57,12 +76,35 @@ void Addconector::Execute()
 	Input* pIn = pManager->GetInput();
 	Output* pOut = pManager->GetOutput();
 
-	if (Source != nullptr && Destination != nullptr)
+	
+
+	start = Source->getOutlet();
+	end = Destination->getInlet();
+
+	if (Source->gettype() == "rhombus")
 	{
-		start = Source->getOutlet();
-		end = Destination->getInlet();	
+
+		pOut->PrintMessage("yes connector on connector: (y/n)");
+		usertext = pIn->GetString(pOut);
+		pOut->ClearStatusBar();
+		while (usertext != "y" && usertext != "Y" && usertext != "n" && usertext != "N")
+		{
+			pOut->PrintMessage("(try again) yes connector on connector: (y/n)");
+			usertext = pIn->GetString(pOut);
+			pOut->ClearStatusBar();
+		}
+		if (usertext == "y" || usertext == "Y")
+		{
+			start = Source->getOutletyes();
+		}
+		else
+		{
+			start = Source->getOutletno();
+
+		}
 	}
 	Connector* pAssign = new Connector(start, end);
 	pAssign->Draw(pOut);
+
 }
 //still in progress
