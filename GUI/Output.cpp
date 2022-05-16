@@ -298,14 +298,13 @@ void Output::DrawConnector(Point Start, Point End, bool Selected)
 	}
 	
 
-
+	pWind->SetPen(BLACK, 2);
 	drawstyle dsStyle = FRAME;
 	if (Selected)	//if stat is selected, it should be highlighted
-		pWind->SetPen(UI.HiClr, 3);	//use highlighting color
+		pWind->SetPen(UI.HiClr, 2);	//use highlighting color
 	else
-		pWind->SetPen(UI.DrawClr, 3);	//use normal color
+		pWind->SetPen(BLACK, 2);	//use normal color
 
-	pWind->SetPen(BLACK, 2);
 
 	pWind->DrawLine(Start.x, Start.y, Start.x, End.y - 15, dsStyle);
 	pWind->DrawLine(Start.x, End.y - 15, End.x, End.y - 15, dsStyle);

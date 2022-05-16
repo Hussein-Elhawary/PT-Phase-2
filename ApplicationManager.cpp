@@ -23,7 +23,7 @@ ApplicationManager::ApplicationManager()
 	StatCount = 0;
 	ConnCount = 0;
 	pSelectedStat = NULL;	//no Statement is selected yet
-
+	pSelectedConn = NULL;
 	//Create an array of Statement pointers and set them to NULL		
 	for (int i = 0; i < MaxCount; i++)
 	{
