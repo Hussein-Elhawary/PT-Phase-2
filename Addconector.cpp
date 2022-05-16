@@ -59,8 +59,8 @@ void Addconector::Execute()
 
 	if (Source != nullptr && Destination != nullptr)
 	{
-		start = Source->getInlet();
-		end = Destination->getOutlet();	
+		start = Source->getOutlet();
+		end = Destination->getInlet();	
 	}
 	Connector* pAssign = new Connector(start, end);
 	pAssign->Draw(pOut);
