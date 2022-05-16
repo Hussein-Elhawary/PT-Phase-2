@@ -13,7 +13,7 @@ private:
 	Statement *DstStat;	//The destination statement of the connector
 	Point Start;	//Start point of the connector
 	Point End;		//End point of the connector
-
+	bool selected;
 public:
 	Connector(Statement* Src, Statement* Dst);
 	Connector(Point startc, Point endc);
@@ -34,7 +34,8 @@ public:
 	virtual void UpdateStatementText();
 	virtual Point getstatmentposition();
 	virtual void getconnectorcords(Point& Startg, Point& Endg);
-
+	void unselectconn();
+	void SetSelected(bool s);
 };
 
 #endif

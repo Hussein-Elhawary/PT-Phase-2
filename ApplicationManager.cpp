@@ -208,7 +208,7 @@ Connector* ApplicationManager::GetConnector(Point P) const
 	{
 		ConnList[i]->getconnectorcords(Start,End);
 		{
-			if (((P.y == End.y - 15 || P.x == Start.x) && (P.x >= Start.x && P.x <= End.x && P.y >= Start.y && P.y <= End.y)) || (P.x == End.x && P.y >= End.y - 15 && P.y <= End.y))
+			if ((abs(P.x-Start.x)<=5 && P.y>=Start.y && P.y<=End.y)||(abs(P.y-End.y+15)<=5 && P.x >= Start.x && P.x <= End.x))
 			{
 
 				return ConnList[i];
