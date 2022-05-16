@@ -13,6 +13,7 @@ Connector::Connector(Point startc, Point endc)
 {
 	Start = startc;
 	End = endc;
+	selected = false;
 }
 
 void Connector::setSrcStat(Statement *Src)
@@ -43,7 +44,7 @@ Point Connector::getEndPoint()
 void Connector::Draw(Output* pOut) const
 {
 	///TODO: Call output to draw a connector from SrcStat to DstStat on the output window
-	pOut->DrawConnector(Start, End,false);
+	pOut->DrawConnector(Start, End,selected);
 }
 
 void Connector::UpdateStatementText()

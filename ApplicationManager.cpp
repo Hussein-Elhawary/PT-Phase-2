@@ -24,7 +24,7 @@ ApplicationManager::ApplicationManager()
 	StatCount = 0;
 	ConnCount = 0;
 	pSelectedStat = NULL;	//no Statement is selected yet
-
+	pSelectedConn = NULL;
 	//Create an array of Statement pointers and set them to NULL		
 	for (int i = 0; i < MaxCount; i++)
 	{
@@ -241,6 +241,7 @@ Statement* ApplicationManager::GetSelectedStatement() const
 void ApplicationManager::SetSelectedStatement(Statement* pStat)
 {
 	pSelectedStat = pStat;
+	pSelectedConn = NULL;
 }
 
 Connector* ApplicationManager::GetSelectedConnector() const
@@ -253,6 +254,7 @@ Connector* ApplicationManager::GetSelectedConnector() const
 void ApplicationManager::SetSelectedConnector(Connector* pConn)
 {
 	pSelectedConn = pConn;
+	pSelectedStat = NULL;
 }
 
 //==================================================================================//

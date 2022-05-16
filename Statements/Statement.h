@@ -25,7 +25,7 @@ protected:
 static int count;
 public:
 	Statement();
-	void SetSelected(bool s);
+	void SetSelected(bool s = false);
 	bool IsSelected() const;
 
 	virtual void Draw(Output* pOut) const  = 0 ;	//Draw the statement
