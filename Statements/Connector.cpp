@@ -56,3 +56,9 @@ Point Connector::getstatmentposition()
 	return Start;
 
 }
+
+void Connector::getconnectorcords(Point &Startg,Point &Endg)
+{
+	Startg = Start;
+	Endg = End;
+}
