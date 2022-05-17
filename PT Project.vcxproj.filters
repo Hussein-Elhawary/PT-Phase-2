@@ -195,6 +195,7 @@
     </ClCompile>
     <ClCompile Include="Select.cpp" />
     <ClCompile Include="Save.cpp" />
+    <ClCompile Include="Run.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -332,6 +333,7 @@
     </ClInclude>
     <ClInclude Include="Select.h" />
     <ClInclude Include="Save.h" />
+    <ClInclude Include="Run.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

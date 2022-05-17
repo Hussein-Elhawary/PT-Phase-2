@@ -6,7 +6,7 @@ using namespace std;
 Read::Read(Point Lcorner, string var)
 {
 	VAR = var;
-	type = "parallelogram";
+	type = "readparallelogram";
 	UpdateStatementText();
 
 	LeftCorner = Lcorner;
@@ -80,4 +80,10 @@ void Read::Save(ofstream& OutFile)
 {
 	OutFile << "READ" << "           " << ID << "  " << LeftCorner.x << "  " << LeftCorner.y << "  " << VAR << endl;
 
+}
+
+string Read::getvar()
+{
+
+	return VAR;
 }

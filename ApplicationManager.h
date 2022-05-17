@@ -58,7 +58,8 @@ public:
 	//void SaveChart(ofstream& OutFile); //saves the flowchart
 	bool FindIfValid();
 	void SaveAll(ofstream& OutFile);
-
+	Statement** getstatlist(); 
+	Connector** getconlist();
 };
 
 #endif

@@ -5,7 +5,7 @@ using namespace std;
 
 Write::Write(Point Lcorner, string var)
 {
-	type = "parallelogram";
+	type = "writeparallelogram";
 	VAR = var;
 
 	UpdateStatementText();

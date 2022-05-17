@@ -18,7 +18,14 @@ protected:
 	int height;
 	Point Inlet;
 	Point Outlet;
-
+	Connector* pConn;
+	Connector* Yes_Conn;
+	Connector* No_Conn;
+	string LHS;	
+	string RHS;
+	string RHS1;
+	string OP;
+	string RHS2;
 	virtual void UpdateStatementText() = 0;	//is called when any part of the stat. is edited	
 
 	/// Add more parameters if needed.
@@ -42,6 +49,17 @@ public:
 	virtual void unselectstat();
 	static int Getcount();
 	int GetID();
+	virtual Connector* getPconn();
+	virtual string getText();
+	virtual Connector* GetNo_Conn();
+	virtual Connector* GetYes_Conn();
+	virtual string getvar();
+	string getLHS();
+	string getRHS();
+	string getRHS1();
+	string getOP();
+	string getRHS2();
+
 	///TODO:The following functions should be supported by the Statement class
 	///		It should then be overridden by each derived Statement
 	///		Decide the parameters that you should pass to each function and its return type	

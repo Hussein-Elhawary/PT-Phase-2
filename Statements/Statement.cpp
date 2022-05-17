@@ -76,5 +76,51 @@ int Statement::Getcount()
 {
 	return count;
 }
+Connector* Statement::getPconn()
+{
+	return pConn;
+}
+
+string Statement::getText()
+{
+	return Text;
+
+}
+
+Connector* Statement::GetNo_Conn()
+{
+	return No_Conn;
+}
+
+Connector* Statement::GetYes_Conn()
+{
+	return Yes_Conn;
+}
+
+string Statement::getLHS()
+{
+	return LHS;
+}
+
+string Statement::getRHS()
+{
+	return RHS;
+}
+
+string Statement::getRHS1()
+{
+	return RHS1;
+}
+
+string Statement::getOP()
+{
+	return OP;
+}
+
+string Statement::getRHS2()
+{
+	return RHS2;
+
+}
 
 int Statement::count = 0;

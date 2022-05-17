@@ -5,7 +5,7 @@ using namespace std;
 
 VarAssign::VarAssign(Point Lcorner, string LeftHS, string RightHS)
 {
-	type = "rectangle";
+	type = "varrectangle";
 	LHS = LeftHS;
 	RHS = RightHS;
 

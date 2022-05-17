@@ -120,6 +120,11 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	case SAVE:
 		pAct = new Save(this);
 		break;
+	case RUN:
+		
+
+	case STP:
+
 
 	case EXIT:
 		///create Exit Action here
@@ -129,6 +134,7 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	case STATUS:
 		return;
 	}
+
 
 	//Execute the created action
 	if (pAct != NULL)
@@ -374,4 +380,16 @@ ApplicationManager::~ApplicationManager()
 	delete pIn;
 	delete pOut;
 
+}
+
+Statement** ApplicationManager::getstatlist()
+{
+
+	return StatList;
+}
+
+Connector** ApplicationManager::getconlist()
+{
+
+	return ConnList;
 }

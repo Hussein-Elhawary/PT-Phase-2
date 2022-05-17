@@ -7,7 +7,7 @@ SmplAssign::SmplAssign(Point Lcorner, string LeftHS, double RightHS)
 {
 	LHS = LeftHS;
 	RHS = RightHS;
-	type = "rectangle";
+	type = "smplrectangle";
 	UpdateStatementText();
 
 	LeftCorner = Lcorner;
