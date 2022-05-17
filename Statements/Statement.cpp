@@ -56,10 +56,6 @@ Point Statement::getOutletno()
 	return NULL;
 }
 
-//Connector* Statement::Getconnect()
-//{
-//	return NULL;
-//}
 
 void Statement::unselectstat()
 {
@@ -70,6 +66,12 @@ void Statement::unselectstat()
 int Statement::GetID()
 {
 	return ID;
+}
+
+
+bool Statement::GetConnected()
+{
+	return Connected;
 }
 
 int Statement::Getcount()
@@ -124,3 +126,8 @@ string Statement::getRHS2()
 }
 
 int Statement::count = 0;
+
+Connector* Statement::Getconnect()
+{
+	return NULL;
+}

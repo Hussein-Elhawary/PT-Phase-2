@@ -294,6 +294,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="Validation.cpp" />
     <ClCompile Include="VarAssign.cpp" />
     <ClCompile Include="Write.cpp" />
   </ItemGroup>
@@ -344,6 +345,7 @@
     <ClInclude Include="Statements\SmplAssign.h" />
     <ClInclude Include="Statements\Statement.h" />
     <ClInclude Include="DEFS.h" />
+    <ClInclude Include="Validation.h" />
     <ClInclude Include="VarAssign.h" />
     <ClInclude Include="Write.h" />
   </ItemGroup>

@@ -12,7 +12,7 @@ class Statement
 protected:
 	int ID;			//Each Statement has an ID
 	string Text;	//Statement text (e.g.  "X = 5" OR "if(salary > 3000)" and so on )
-	bool Selected;	//true if the statement is selected on the folwchart
+	bool Selected=false;	//true if the statement is selected on the folwchart
 	string type;
 	int width;
 	int height;
@@ -43,7 +43,6 @@ public:
 	virtual int getwidth();
 	virtual Point getInlet();
 	virtual Point getOutlet();
-	//virtual Connector* Getconnect();
 	virtual Point getOutletyes();
 	virtual Point getOutletno();
 	virtual void unselectstat();
