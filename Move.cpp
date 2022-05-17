@@ -28,6 +28,6 @@ void Move::Execute()
 	/*pManager->GetSelectedStatement()->SetSelected(false);
 	pManager->SetSelectedStatement(NULL);*/
 	//pManager->removeStatement(st_ptr);
-
+	pOut->ClearDrawArea();
 	pManager->UpdateInterface();
 }
