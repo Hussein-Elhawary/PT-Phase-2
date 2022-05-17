@@ -13,6 +13,7 @@
 #include "AddCondition.h"
 #include "string"
 #include "Addconector.h"
+#include "Run.h"
 
 //Constructor
 ApplicationManager::ApplicationManager()
