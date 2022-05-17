@@ -56,8 +56,9 @@ public:
 	Output *GetOutput() const; //Return pointer to the output
 	void UpdateInterface() const;	//Redraws all the drawing window
 	//void SaveChart(ofstream& OutFile); //saves the flowchart
-	bool FindIfValid();
+	bool CheckIfValid();
 	void SaveAll(ofstream& OutFile);
+
 
 };
 

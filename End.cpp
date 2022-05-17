@@ -9,7 +9,6 @@ End::End(Point Lcorner)
 	type = "endellipse";
 	LeftCorner = Lcorner;
 
-	pConn = NULL;	//No connectors yet
 
 	Inlet.x = LeftCorner.x + UI.ASSGN_WDTH / 2;
 	Inlet.y = LeftCorner.y;
@@ -52,7 +51,7 @@ Point End::getOutlet()
 
 Connector* End::Getconnect()
 {
-	return pConn;
+	return NULL;
 }
 
 void End::Save(ofstream& OutFile)
