@@ -4,7 +4,7 @@
 
 #include "ApplicationManager.h"
 
-#include "GUI\input.h"
+#include "GUI/Input.h"
 #include "GUI/Output.h"
 
 #include "CondStatement.h"
@@ -14,15 +14,16 @@
 using namespace std;
 
 //constructor: set the ApplicationManager pointer inside this action
-Run::Run(ApplicationManager* pAppManager) :Action(pAppManager)
-{}
+Run::Run(ApplicationManager* pAppManager) : Action(pAppManager)
+{
+}
 
 void Run::ReadActionParameters()
 {
 	//SmplAssign* ps=NULL;
 	Input* pIn = pManager->GetInput();
 	Output* pOut = pManager->GetOutput();
-
+	pOut->ClearStatusBar();
 }
 
 void Run::Execute()

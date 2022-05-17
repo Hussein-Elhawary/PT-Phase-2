@@ -79,15 +79,10 @@ int Statement::Getcount()
 {
 	return count;
 }
+
 Connector* Statement::getPconn()
 {
 	return pConn;
-}
-
-string Statement::getText()
-{
-	return Text;
-
 }
 
 Connector* Statement::GetNo_Conn()
@@ -98,6 +93,12 @@ Connector* Statement::GetNo_Conn()
 Connector* Statement::GetYes_Conn()
 {
 	return Yes_Conn;
+}
+
+string Statement::getText()
+{
+	return Text;
+
 }
 
 string Statement::getLHS()
@@ -126,6 +127,11 @@ string Statement::getRHS2()
 
 }
 
+string Statement::getvar()
+{
+	return VAR;
+
+}
 int Statement::count = 0;
 
 Connector* Statement::Getconnect()

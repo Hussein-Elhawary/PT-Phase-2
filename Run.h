@@ -3,18 +3,20 @@
 #include "GUI/Input.h"
 #include "GUI/Output.h"
 #include "ApplicationManager.h"
+#include "Statements/Statement.h"
 
 class Run : public Action
-{	private:
+{
+private:
 	ApplicationManager* pManager;
 	int conncount;
 	int statcount;
 	Statement** statlist;
 	Connector** ConnList;
 
-	public:
+public:
+	Run(ApplicationManager* pAppManager);
+	virtual void ReadActionParameters();
 
-		Run(ApplicationManager* pAppManager);
-		void ReadActionParameters();
-		void Run::Execute();
+	virtual void Execute();
 };

@@ -29,8 +29,8 @@ public:
 	virtual void Draw(Output* pOut) const;
 	Point getInlet();
 	Point getOutlet();
-	Connector* GetYes_Conn();
-	Connector* GetNo_Conn(); 
+	virtual Connector* GetYes_Conn();
+	virtual Connector* GetNo_Conn(); 
 	Point getOutletyes();
 	Point getOutletno();
 	virtual void Save(ofstream& OutFile);	//Save the Statement parameters to a file

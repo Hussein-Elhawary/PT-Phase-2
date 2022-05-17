@@ -5,7 +5,6 @@
 #include "Connector.h"
 //class Output;
 #include "..\GUI\Output.h"
-#include "Connector.h"
 #include "string"
 
 //Base class for all Statements
@@ -28,6 +27,7 @@ protected:
 	string RHS1;
 	string OP;
 	string RHS2;
+	string VAR;
 	bool Connected;
 	virtual void UpdateStatementText() = 0;	//is called when any part of the stat. is edited	
 
@@ -51,8 +51,8 @@ public:
 	virtual void unselectstat();
 	static int Getcount();
 	int GetID();
-	virtual Connector* getPconn();
 	virtual string getText();
+	virtual Connector* getPconn();
 	virtual Connector* GetNo_Conn();
 	virtual Connector* GetYes_Conn();
 	virtual string getvar();
@@ -62,7 +62,7 @@ public:
 	string getOP();
 	string getRHS2();
 	bool GetConnected(); 
-	Connector* Getconnect();
+	virtual Connector* Getconnect();
 
 
 	///TODO:The following functions should be supported by the Statement class

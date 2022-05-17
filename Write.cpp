@@ -73,6 +73,11 @@ Point  Write::getOutlet()
 	return Outletr;
 }
 
+Connector* Write::Getconnect()
+{
+	return pConn;
+}
+
 void Write::Save(ofstream& OutFile)
 {
 	OutFile << "WRITE" << "           " << ID << "  " << LeftCorner.x << "  " << LeftCorner.y << "  " << VAR << endl;

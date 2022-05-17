@@ -120,8 +120,10 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 	case SAVE:
 		pAct = new Save(this);
 		break;
+
 	case RUN:
-		
+		pAct = new Run(this);
+		break;
 
 	case STP:
 

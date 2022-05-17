@@ -19,12 +19,15 @@ void Save::Execute()
 	ReadActionParameters();
 	Output* pOut = pManager->GetOutput();
 	Input* pIn = pManager->GetInput();
+
 	int statcount, conncount;                  
 	statcount = pManager->GetStatCount();// storing the number of occurance
 	conncount = pManager->GetConnCount();
+
 	OutFile << statcount << endl; //printing as required file format
 	pManager->SaveAll(OutFile); //calling SaveAll to be able to Call Save of Statements and connectors in the flow chart
-	//OutFile.close(); //closing the opened file 
+	OutFile.close(); //closing the opened file 
+
 	pOut->PrintMessage("Successsfully saved the flowchart, Click anywhere to continue");
 }
 
