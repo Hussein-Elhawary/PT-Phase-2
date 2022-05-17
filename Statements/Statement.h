@@ -5,6 +5,8 @@
 #include "Connector.h"
 //class Output;
 #include "..\GUI\Output.h"
+#include "Connector.h"
+#include "string"
 
 //Base class for all Statements
 class Statement
@@ -26,6 +28,7 @@ protected:
 	string RHS1;
 	string OP;
 	string RHS2;
+	bool Connected;
 	virtual void UpdateStatementText() = 0;	//is called when any part of the stat. is edited	
 
 	/// Add more parameters if needed.
@@ -58,6 +61,9 @@ public:
 	string getRHS1();
 	string getOP();
 	string getRHS2();
+	bool GetConnected(); 
+	Connector* Getconnect();
+
 
 	///TODO:The following functions should be supported by the Statement class
 	///		It should then be overridden by each derived Statement

@@ -5,6 +5,7 @@ Statement::Statement()
 	Text = "";
 	Selected = false;
 	ID = count++;
+	Connected = false;
 	
 }
 
