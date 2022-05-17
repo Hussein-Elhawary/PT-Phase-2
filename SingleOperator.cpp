@@ -104,3 +104,29 @@ Point SingleOperator::getOutlet()
 	Point Outletr = Outlet;
 	return Outletr;
 }
+
+
+Statement* SingleOperator::getCopy()
+{
+	return new SingleOperator(LeftCorner, LHS, RHS1, OP, RHS2);
+}
+
+string SingleOperator::getLHS()
+{
+	return LHS;
+}
+
+string SingleOperator::getRHS1()
+{
+	return RHS1;
+}
+
+string SingleOperator::getRHS2()
+{
+	return RHS2;
+}
+
+string SingleOperator::getOP()
+{
+	return OP;
+}

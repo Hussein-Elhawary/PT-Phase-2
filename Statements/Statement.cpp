@@ -138,3 +138,31 @@ Connector* Statement::Getconnect()
 {
 	return NULL;
 }
+
+void Statement::UpdateStatementText()
+{
+}
+
+void Statement::Draw(Output* pOut) const
+{
+}
+
+Statement* Statement::getCopy()
+{
+	return 0;
+}
+
+Point Statement::getLeftCorner()
+{
+	return LeftCorner;
+}
+
+void Statement::Save(ofstream& OutFile)
+{
+}
+
+void Statement::Move(Point final)
+{
+	LeftCorner = final;
+}
+

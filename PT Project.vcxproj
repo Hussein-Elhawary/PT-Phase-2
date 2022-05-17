@@ -274,6 +274,7 @@
     </ClCompile>
     <ClCompile Include="Actions\AddSmplAssign.cpp" />
     <ClCompile Include="CondStatement.cpp" />
+    <ClCompile Include="Copy.cpp" />
     <ClCompile Include="End.cpp" />
     <ClCompile Include="GUI\Input.cpp" />
     <ClCompile Include="GUI\Output.cpp" />
@@ -281,6 +282,8 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="Move.cpp" />
+    <ClCompile Include="Paste.cpp" />
     <ClCompile Include="Read.cpp" />
     <ClCompile Include="Run.cpp" />
     <ClCompile Include="Save.cpp" />
@@ -330,11 +333,14 @@
     <ClInclude Include="Actions\Action.h" />
     <ClInclude Include="Actions\AddSmplAssign.h" />
     <ClInclude Include="CondStatement.h" />
+    <ClInclude Include="Copy.h" />
     <ClInclude Include="End.h" />
     <ClInclude Include="GUI\Input.h" />
     <ClInclude Include="GUI\Output.h" />
     <ClInclude Include="GUI\UI_Info.h" />
     <ClInclude Include="ApplicationManager.h" />
+    <ClInclude Include="Move.h" />
+    <ClInclude Include="Paste.h" />
     <ClInclude Include="Read.h" />
     <ClInclude Include="Run.h" />
     <ClInclude Include="Save.h" />

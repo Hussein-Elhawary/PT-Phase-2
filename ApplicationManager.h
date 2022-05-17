@@ -25,6 +25,7 @@ private:
 	//Pointers to Input and Output classes
 	Input *pIn;
 	Output *pOut;
+	Statement* Clipboard;
 
 public:	
 	ApplicationManager(); 
@@ -60,7 +61,9 @@ public:
 	void SaveAll(ofstream& OutFile);
 	Statement** getstatlist(); 
 	Connector** getconlist();
-
+	void setClipboard(Statement* ptr);
+	void removeStatement(Statement* st_ptr);
+	Statement* getClipboard();
 
 };
 

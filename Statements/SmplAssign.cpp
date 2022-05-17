@@ -86,3 +86,18 @@ void SmplAssign::Save(ofstream& OutFile)
 {
 	OutFile << "SMPLASSIGN" << "       " << ID << "  " << LeftCorner.x << "  " << LeftCorner.y << "  " << LHS << "  " << RHS << "  " << endl;
 }
+
+string SmplAssign::getLHS()
+{
+	return LHS;
+}
+
+double SmplAssign::getRHS()
+{
+	return RHS;
+}
+
+Statement* SmplAssign::getCopy()
+{
+	return new SmplAssign(LeftCorner, LHS, RHS);
+}

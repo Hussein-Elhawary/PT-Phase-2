@@ -83,3 +83,13 @@ void Write::Save(ofstream& OutFile)
 	OutFile << "WRITE" << "           " << ID << "  " << LeftCorner.x << "  " << LeftCorner.y << "  " << VAR << endl;
 	
 }
+
+Statement* Write::getCopy()
+{
+	return new Write(LeftCorner, VAR);
+}
+
+string Write::getVAR()
+{
+	return VAR;
+}

@@ -88,3 +88,19 @@ void VarAssign::Save(ofstream& OutFile)
 	OutFile << "VARASSIGN" << "       " << ID << "  " << LeftCorner.x << "  " << LeftCorner.y << "  " << LHS << "  " << RHS << "  " << endl;
 
 }
+
+
+Statement* VarAssign::getCopy()
+{
+	return new VarAssign(LeftCorner, LHS, RHS);
+}
+
+string VarAssign::getLHS()
+{
+	return LHS;
+}
+
+string VarAssign::getRHS()
+{
+	return RHS;
+}

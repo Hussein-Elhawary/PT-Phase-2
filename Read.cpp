@@ -87,3 +87,13 @@ string Read::getvar()
 
 	return VAR;
 }
+
+Statement* Read::getCopy()
+{
+	return new Read(LeftCorner, VAR);
+}
+
+string Read::getVAR()
+{
+	return VAR;
+}

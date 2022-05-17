@@ -59,3 +59,8 @@ void End::Save(ofstream& OutFile)
 	OutFile << "END" << "           " << ID << "  " << LeftCorner.x << "  " << LeftCorner.y << " " << endl;
 
 }
+
+Statement* End::getCopy()
+{
+	return new End(LeftCorner);
+}

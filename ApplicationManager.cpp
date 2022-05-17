@@ -14,6 +14,9 @@
 #include "string"
 #include "Addconector.h"
 #include "Run.h"
+#include "Copy.h"
+#include "Paste.h"
+#include "Move.h"
 
 //Constructor
 ApplicationManager::ApplicationManager()
@@ -124,6 +127,19 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 
 	case RUN:
 		pAct = new Run(this);
+		break;
+
+	
+	case COPY:
+		pAct = new Copy(this);
+		break;
+
+	case PASTE:
+		pAct = new Paste(this);
+		break;
+
+	case MOVE:
+		pAct = new Move(this);
 		break;
 
 	case STP:
@@ -256,6 +272,33 @@ void ApplicationManager::SetSelectedStatement(Statement* pStat)
 Connector* ApplicationManager::GetSelectedConnector() const
 {
 	return pSelectedConn;
+}
+
+void ApplicationManager::setClipboard(Statement* ptr)
+{
+	Clipboard = ptr;
+}
+
+void ApplicationManager::removeStatement(Statement* st_ptr)
+{
+	int stID = st_ptr->GetID();
+	for (int i = 0;i < StatCount;i++)
+	{
+		if (StatList[i]->GetID() == stID)
+		{
+			StatList[i] = StatList[StatCount - 1];
+			StatList[StatCount - 1] = NULL;
+			break;
+		}
+
+	}
+
+}
+
+
+Statement* ApplicationManager::getClipboard()
+{
+	return Clipboard;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////

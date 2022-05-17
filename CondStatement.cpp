@@ -1,5 +1,6 @@
 #include "CondStatement.h"
 #include <sstream>
+#include "Copy.h"
 
 using namespace std;
 
@@ -120,4 +121,30 @@ void CondStatement::Save(ofstream& OutFile)
 {
 	OutFile << "COND" << "  " << ID << "  " << LeftCorner.x << "  " << LeftCorner.y << "  " << LHS << "  " << OP << "  " << RHS << endl;
 
+}
+
+
+Statement* CondStatement::getCopy()
+{
+	return new CondStatement(LeftCorner, LHS, OP, RHS);
+}
+
+Point CondStatement::getLeftCorner()
+{
+	return LeftCorner;
+}
+
+string CondStatement::getRHS()
+{
+	return RHS;
+}
+
+string CondStatement::getLHS()
+{
+	return LHS;
+}
+
+string CondStatement::getOP()
+{
+	return OP;
 }

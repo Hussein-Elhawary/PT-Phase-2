@@ -62,3 +62,9 @@ void Start::Save(ofstream& OutFile)
 	OutFile << "START" << "           " << ID << "  " << LeftCorner.x << "  " << LeftCorner.y << " " << endl;
 	
 }
+
+
+Statement* Start::getCopy()
+{
+	return new Start(LeftCorner);
+}

@@ -196,6 +196,10 @@
     <ClCompile Include="Select.cpp" />
     <ClCompile Include="Save.cpp" />
     <ClCompile Include="Run.cpp" />
+    <ClCompile Include="Validation.cpp" />
+    <ClCompile Include="Copy.cpp" />
+    <ClCompile Include="Move.cpp" />
+    <ClCompile Include="Paste.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -334,6 +338,10 @@
     <ClInclude Include="Select.h" />
     <ClInclude Include="Save.h" />
     <ClInclude Include="Run.h" />
+    <ClInclude Include="Validation.h" />
+    <ClInclude Include="Copy.h" />
+    <ClInclude Include="Move.h" />
+    <ClInclude Include="Paste.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

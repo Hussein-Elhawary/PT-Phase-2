@@ -14,7 +14,7 @@ private:
 	Point Yes_Outlet;	//A point a yes connection leaves this statement
 	Point No_Outlet;	//A point a no connection leaves this statement
 
-	Point LeftCorner;	//left corenr of the statement block.
+	//Point LeftCorner;	//left corenr of the statement block.
 
 	virtual void UpdateStatementText();
 
@@ -34,6 +34,10 @@ public:
 	Point getOutletyes();
 	Point getOutletno();
 	virtual void Save(ofstream& OutFile);	//Save the Statement parameters to a file
-
+	Statement* getCopy();
+	Point getLeftCorner();
+	string getRHS();
+	string getLHS();
+	string getOP();
 };
 
